@@ -10,9 +10,9 @@ export async function handleMenuSection(
   menuId?: string,
   menu?: IMenuItem
 ) {
-  let updateMessage;
   if (menuText && menu?.price) {
-    updateMessage = await ctx.reply("Обновляем корзину...", {
+    console.log(menuText, "menutext");
+    await ctx.reply(`Обновляем корзину...`, {
       reply_markup: keyboard,
     });
   }
@@ -26,7 +26,4 @@ export async function handleMenuSection(
     ctx.session.menuHistory.push(menuId);
     await createInlineMenu(ctx, menuId);
   }
-  // if (updateMessage && ctx.chatId) {
-  //   await ctx.api.deleteMessage(ctx.chatId, updateMessage.message_id);
-  // }
 }

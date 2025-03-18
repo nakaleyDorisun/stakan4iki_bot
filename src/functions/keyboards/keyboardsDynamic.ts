@@ -60,3 +60,32 @@ export const keyboardCatalog = async (ctx: MyContext) => {
     .resized();
   return keyboardCatalog;
 };
+
+export const keyboardCap02 = async (ctx: MyContext) => {
+  const keyboardCap02 = new Keyboard()
+    .text("Добавить в Корзину🛍")
+    .text(
+      `Корзина🛒${
+        ctx.session.cart.length ? `(${ctx.session.cart.length})` : " "
+      }`
+    )
+    .row()
+    .text("Каталог📕")
+    .text("Главное меню🏡")
+    .resized();
+  return keyboardCap02;
+};
+
+export const keyboardAddToCart = async (ctx: MyContext) => {
+  const keyboardAddToCart = new Keyboard()
+    .text("1️⃣")
+    .text("2️⃣")
+    .text("3️⃣")
+    .row()
+    .text("Ввести свое количество")
+    .row()
+    .text("Каталог📕")
+    .text("Главное меню🏡")
+    .resized();
+  return keyboardAddToCart;
+};

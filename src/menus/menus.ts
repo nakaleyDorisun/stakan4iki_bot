@@ -39,7 +39,7 @@ export const menus: IMenus = {
     callbackQuery: "catalog",
     buttons: [
       { text: "Стаканы 🥤", callback_data: "button_allCaps_click" },
-      { text: "КрыЖки☕️", callback_data: "button_allTops_click" },
+      { text: "Крышки☕️", callback_data: "button_allTops_click" },
       { text: "Прочее товары", callback_data: "button_another_click" },
     ],
   },
@@ -74,13 +74,13 @@ export const menus: IMenus = {
     ],
   },
   button_caps02_click: {
-    text: "Стаканы 0,2л 100шт белые",
+    text: "Стаканы 0,2л - упаковка 100шт. Белые, без ресунка",
     price: 150,
     callbackQuery: "button_caps02_click",
     buttons: [
-      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
-      { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
-      { text: "Вернуться в каталог📕", callback_data: "catalog" },
+      // { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      // { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
+      // { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_caps03_click: {

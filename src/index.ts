@@ -49,6 +49,10 @@ bot.hears("Каталог📕", handlerHearExport.handlerCatalog);
 
 bot.hears(/Корзина(\((\d+)\)|\s*)/, handlerHearExport.handlerCart);
 
+bot.hears("Добавить в Корзину🛍", handlerHearExport.handlerAddToCart);
+
+bot.hears("1️⃣", handlerHearExport.handlerAdd1Item);
+
 bot.hears("Личный кабинет🔐", handlerHearExport.handlerAccoutn);
 
 bot.hears("Адрес🏠", handlerHearExport.handlerAdress);
