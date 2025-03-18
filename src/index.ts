@@ -1,5 +1,12 @@
 import dotenv from "dotenv";
-import { Bot, MemorySessionStorage, session, Keyboard } from "grammy";
+import {
+  Bot,
+  MemorySessionStorage,
+  session,
+  Keyboard,
+  GrammyError,
+  HttpError,
+} from "grammy";
 import { MyContext, SessionData } from "./types";
 import { handlerHearExport } from "./functions/handlers/hears/_handlerHearExport";
 import { handlerCallBackQuery } from "./functions/handlers/callbackQuery/_buttonExportCQ";
@@ -130,6 +137,19 @@ bot.on("callback_query", async (ctx) => {
     // Проверка callback_data
     ctx.session.menuHistory.push(action);
     await createInlineMenu(ctx, action);
+  }
+});
+
+bot.catch((error) => {
+  const ctx = error.ctx;
+  console.error(`Error while handling update${ctx.update.update_id}`);
+  const e = error.error;
+  if (e instanceof GrammyError) {
+    console.error("Error in request:", e.description);
+  } else if (e instanceof HttpError) {
+    console.error("Could not connect Telegram", e);
+  } else {
+    console.error("Unknow error", e);
   }
 });
 
