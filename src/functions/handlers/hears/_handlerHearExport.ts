@@ -10,7 +10,7 @@ import { handlerDelivery } from "./handlerDelivery";
 import { handlerInfo } from "./handlerInfo";
 import { handlerAdminPanel } from "./handlerAdminPanel";
 import { handlerBackButton } from "./handlerBackButton";
-import { handlerPersonalDataChange } from "./handlerPersonalDataChange";
+import { handlerPersonalDataRegister } from "./handlerPersonalDataRegister";
 export const handlerHearExport = {
   handlerAccoutn,
   handlerCart,
@@ -24,5 +24,5 @@ export const handlerHearExport = {
   handlerInfo,
   handlerAdminPanel,
   handlerBackButton,
-  handlerPersonalDataChange,
+  handlerPersonalDataRegister,
 };

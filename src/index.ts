@@ -5,7 +5,6 @@ import { handlerHearExport } from "./functions/handlers/hears/_handlerHearExport
 import { handlerCallBackQuery } from "./functions/handlers/callbackQuery/_buttonExportCQ";
 import { startCommand } from "./functions/handlers/commands/startCommand";
 import { createInlineMenu } from "./functions/createFunctions/createInlineMenu";
-import { _handlerPersonalDataChange } from "./functions/handlers/hears/_handelerPersonalDataChange";
 
 dotenv.config();
 const botToken = process.env.BOT_TOKEN;
@@ -25,12 +24,14 @@ bot.use(
       menuHistory: [],
       keyboardHistory: [],
       cart: [],
+      orders: [],
       phone: null,
       adress: null,
       totalRub: 0,
-      isWaitingForPhone: false,
       isWaitingForAdress: false,
-      orders: [],
+      isWaitingForPhone: false,
+      isWaitingForAdressChange: false,
+      isWaitingForPhoneChange: false,
       isAdmin: false,
     }),
     storage: new MemorySessionStorage(),
@@ -51,7 +52,7 @@ bot.hears("Личный кабинет🔐", handlerHearExport.handlerAccoutn);
 
 bot.hears("Адрес🏠", handlerHearExport.handlerAdress);
 
-bot.hears("Изменить адресс⚙️", handlerHearExport.handlerChangeAdress);
+bot.hears("Изменить адрес⚙️", handlerHearExport.handlerChangeAdress);
 
 bot.hears("Телефон☎️", handlerHearExport.handlerPhone);
 
@@ -65,9 +66,8 @@ bot.hears("Панель Админа🔐", handlerHearExport.handlerAdminPanel);
 
 bot.hears("Назад", handlerHearExport.handlerBackButton);
 
-// Слушатель замены адреса и телефона
-// bot.on("message:text", handlerHearExport.handlerPersonalDataChange);
-bot.on("message:text", _handlerPersonalDataChange);
+// Слушатель ввода/замены адреса и телефона
+bot.on("message:text", handlerHearExport.handlerPersonalDataRegister);
 
 // Слушатель инлайн кнопки меню
 bot.callbackQuery("menu", handlerCallBackQuery.buttonMenuCQ);

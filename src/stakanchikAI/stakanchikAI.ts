@@ -3,6 +3,7 @@ import { createReplyKeyboard } from "../functions/keyboards/createKeyboard";
 import { MyContext } from "../types";
 
 export async function StakanchikAI(ctx: MyContext) {
+  console.log("StakanchikAI");
   let isCatalog;
   let isCap;
   let isTop;
