@@ -32,7 +32,7 @@ export async function cartMenuRender(ctx: MyContext) {
       await ctx.reply("Корзина пуста, выбирете товар из каталога");
       const keyboardCatalog = await createReplyKeyboard(ctx, "keyboardCatalog");
       if (keyboardCatalog) {
-        handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
+        await handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
       } else {
         console.error("Ошибка: Не удалось создать клавиатуру каталога.");
         await ctx.reply(

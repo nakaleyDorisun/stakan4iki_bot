@@ -11,14 +11,18 @@ export async function handlerAccoutn(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_ACCOUNT
   );
   if (keyboardAccount) {
-    handleMenuSection(ctx, "Личный кабинет🔐", keyboardAccount /*"account"*/);
+    await handleMenuSection(
+      ctx,
+      "Личный кабинет🔐",
+      keyboardAccount /*"account"*/
+    );
     if (ctx.session.adress && ctx.session.phone) {
       await ctx.reply(
-        `${firstName}\n\nВаш ID: ${id}\n\n☎️Ваш номер телефона: ${ctx.session.phone}\n\n🏠Ваш адресс доставки: ${ctx.session.adress}`
+        `${firstName}\n\nВаш ID: ${id}\n\n☎️Ваш номер телефона: ${ctx.session.phone}\n\n🏠Ваш адресс доставки: ${ctx.session.adress}\n\nВы всегда можете изменить свои данные перейдя в соответвующие пункты меню:`
       );
     } else {
       await ctx.reply(
-        `Пожалуйста, заполните номер телефона и адрес доставки перейдя в соответвующие пункты меню:`
+        `${firstName}\n\nпожалуйста, заполните адрес доставки и контактный номер телефона перейдя в соответвующие пункты меню:`
       );
     }
   } else {

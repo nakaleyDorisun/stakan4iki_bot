@@ -10,6 +10,6 @@ export async function buttonCap04CQ(ctx: MyContext) {
     await ctx.editMessageText(menu.text, { reply_markup: keyboard });
   } catch (error) {
     await ctx.reply("Не удалось загрузить товар");
-    console.log(error);
+    console.error(error);
   }
 }

@@ -26,7 +26,13 @@ export async function buttonAddToCartCQ(ctx: MyContext) {
     const keyboardCatalog = await createReplyKeyboard(ctx, "keyboardCatalog");
     if (item.price) ctx.session.totalRub += item.price;
     if (keyboardCatalog)
-      handleMenuSection(ctx, curretnMenuText, keyboardCatalog, currentMenuId);
+      await handleMenuSection(
+        ctx,
+        curretnMenuText,
+        keyboardCatalog,
+        currentMenuId,
+        item ///
+      );
   } catch (error) {
     await ctx.reply(
       `Ошибка добавления в корзину ${item.text}, попробуйте еще раз`

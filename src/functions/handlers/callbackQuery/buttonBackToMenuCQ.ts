@@ -6,7 +6,6 @@ export async function buttonBackToMenuCQ(ctx: MyContext) {
   if (ctx.session.menuHistory.length > 1) {
     ctx.session.menuHistory.pop();
     const previousMenu = ctx.session.menuHistory.slice(-1)[0];
-    console.log(previousMenu, "previousMenu");
     if (previousMenu) {
       await createInlineMenu(ctx, previousMenu);
     } else {

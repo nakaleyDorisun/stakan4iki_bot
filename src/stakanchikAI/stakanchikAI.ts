@@ -1,4 +1,4 @@
-import { handleMenuSection } from "..";
+import { handleMenuSection } from "../functions/createFunctions/handleMenuSection";
 import { createReplyKeyboard } from "../functions/keyboards/createKeyboard";
 import { MyContext } from "../types";
 

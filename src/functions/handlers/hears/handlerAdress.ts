@@ -9,7 +9,7 @@ export async function handlerAdress(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_ADDRESS
   );
   if (keyboardAdress) {
-    handleMenuSection(ctx, "Адрес🏠", keyboardAdress, "adress");
+    await handleMenuSection(ctx, "Адрес🏠", keyboardAdress /*"adress"*/);
   } else {
     console.error("Ошибка: Не удалось создать клавиатуру меню адреса.");
     await ctx.reply(
@@ -18,6 +18,7 @@ export async function handlerAdress(ctx: MyContext) {
   }
   if (!ctx.session.adress) {
     ctx.session.isWaitingForAdress = true;
+    await ctx.reply("Адрес🏠 доставки отсутсвует");
     await ctx.reply(
       "Введите ваш адрес доставки\n\nАдрес должен содержать:\n- город\n- улицу\n- номер дома (номер офиса / квартиры / помещения\n\nНапример: г.Калининград, ул.Брамса д.45, оф.1",
       {
@@ -26,5 +27,6 @@ export async function handlerAdress(ctx: MyContext) {
     );
   } else {
     await ctx.reply(`Ваш адрес доставки: ${ctx.session.adress}`);
+    ctx.session.isWaitingForAdress = false; //
   }
 }

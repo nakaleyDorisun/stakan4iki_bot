@@ -9,7 +9,7 @@ export async function handlerInfo(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_INFO
   );
   if (keyboardInfo) {
-    handleMenuSection(ctx, "Информация📋", keyboardInfo, "info");
+    await handleMenuSection(ctx, "Информация📋", keyboardInfo, "info");
   } else {
     console.error("Ошибка: Не удалось создать клавиатуру меню информации.");
     await ctx.reply(

@@ -9,7 +9,7 @@ export async function handlerCatalog(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_CART
   );
   if (keyboardCatalog) {
-    handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
+    await handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
   } else {
     console.error("Ошибка: Не удалось создать клавиатуру каталога.");
     await ctx.reply(

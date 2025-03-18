@@ -10,7 +10,7 @@ export async function handlerAdminPanel(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_ADMIN_PANEL
   );
   if (keyboardAdminPanel) {
-    handleMenuSection(ctx, "Панель Админа🔐", keyboardAdminPanel);
+    await handleMenuSection(ctx, "Панель Админа🔐", keyboardAdminPanel);
   } else {
     console.error("Ошибка: Не удалось создать клавиатуру меню администратора.");
     await ctx.reply(

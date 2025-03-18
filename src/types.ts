@@ -17,8 +17,8 @@ export interface SessionData {
   menuHistory: string[]; // Массив для хранения истории меню, необходим для инлайн кнопки обрано
   keyboardHistory: Keyboard[]; // Массив для хранения истории клавиатур, небходим для reply кнопки обратно
   cart: Cart[]; // Массив товар в корзине
-  phone: string | null; // номер телефона из личного кабинета
-  adress: string | null; // адрес доставки из личного кабинета
+  phone: string | null | undefined; // номер телефона из личного кабинета
+  adress: string | null | undefined; // адрес доставки из личного кабинета
   totalRub: number; // итоговая ссумма заказа
   isWaitingForPhone: boolean; // бот ожидает ответ чтобы сохранить номер телефона
   isWaitingForAdress: boolean; // бот ожидает ответ чтобы сохранить адрес доставки

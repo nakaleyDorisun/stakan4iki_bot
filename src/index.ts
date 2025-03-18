@@ -5,6 +5,7 @@ import { handlerHearExport } from "./functions/handlers/hears/_handlerHearExport
 import { handlerCallBackQuery } from "./functions/handlers/callbackQuery/_buttonExportCQ";
 import { startCommand } from "./functions/handlers/commands/startCommand";
 import { createInlineMenu } from "./functions/createFunctions/createInlineMenu";
+import { _handlerPersonalDataChange } from "./functions/handlers/hears/_handelerPersonalDataChange";
 
 dotenv.config();
 const botToken = process.env.BOT_TOKEN;
@@ -65,7 +66,8 @@ bot.hears("Панель Админа🔐", handlerHearExport.handlerAdminPanel);
 bot.hears("Назад", handlerHearExport.handlerBackButton);
 
 // Слушатель замены адреса и телефона
-bot.on("message:text", handlerHearExport.handlerPersonalDataChange);
+// bot.on("message:text", handlerHearExport.handlerPersonalDataChange);
+bot.on("message:text", _handlerPersonalDataChange);
 
 // Слушатель инлайн кнопки меню
 bot.callbackQuery("menu", handlerCallBackQuery.buttonMenuCQ);

@@ -9,7 +9,7 @@ export async function handlerPhone(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_PHONE
   );
   if (keyboardPhone) {
-    handleMenuSection(ctx, "Телефон☎️", keyboardPhone, "phone");
+    await handleMenuSection(ctx, "Телефон☎️", keyboardPhone /*"phone"*/);
   } else {
     console.error("Ошибка: Не удалось создать клавиатуру меню телефона.");
     await ctx.reply(
@@ -18,7 +18,7 @@ export async function handlerPhone(ctx: MyContext) {
   }
   if (!ctx.session.phone) {
     ctx.session.isWaitingForPhone = true;
-
+    await ctx.reply("Контактный номер телефона  отсутствует");
     await ctx.reply(
       "Введите ваш номер телефона\nНомер телефона можно вводить в любом формате, миним 6 цифр, например\n\n89123123123 или +79123123123",
       {
@@ -27,5 +27,6 @@ export async function handlerPhone(ctx: MyContext) {
     );
   } else {
     await ctx.reply(`Ваш номер телефона: ${ctx.session.phone}`);
+    ctx.session.isWaitingForPhone = false; //
   }
 }

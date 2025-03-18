@@ -13,7 +13,7 @@ export const keyboardMenu = async (ctx: MyContext) => {
     .text("Личный кабинет🔐")
     .text(
       `Доставка🛵${
-        ctx.session.orders.length ? `(${ctx.session.orders.length + 1})` : " "
+        ctx.session.orders.length ? `(${ctx.session.orders.length})` : " "
       }`
     )
     .row()
@@ -28,7 +28,7 @@ export const keyboardMenuAdmin = async (ctx: MyContext) => {
       .text("Каталог📕")
       .text(
         `Корзина🛒${
-          ctx.session.cart.length ? `(${ctx.session.cart.length + 1})` : " "
+          ctx.session.cart.length ? `(${ctx.session.cart.length})` : " "
         }`
       )
       .row()
@@ -36,7 +36,7 @@ export const keyboardMenuAdmin = async (ctx: MyContext) => {
       .text("Панель Админа🔐")
       .text(
         `Доставка🛵${
-          ctx.session.orders.length ? `(${ctx.session.orders.length + 1})` : " "
+          ctx.session.orders.length ? `(${ctx.session.orders.length})` : " "
         }`
       )
       .row()

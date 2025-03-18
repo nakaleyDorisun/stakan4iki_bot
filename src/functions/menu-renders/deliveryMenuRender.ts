@@ -1,5 +1,4 @@
 import { MyContext } from "../../types";
-import { handleMenuSection } from "../createFunctions/handleMenuSection";
 import { createSimpleReplyKeyboard } from "../keyboards/createKeyboard";
 import { simpleKeyboards } from "../keyboards/keyboardsSimple";
 
@@ -28,7 +27,7 @@ export async function deliveryMenuRender(ctx: MyContext) {
       ctx.reply("У вас нет заказов");
     }
   } catch (error) {
-    console.log("Произошла ошибка при загрузке меню доставки");
+    console.error("Произошла ошибка при загрузке меню доставки");
     await ctx.reply("Не удалось загрузить меню доставки");
   }
 }

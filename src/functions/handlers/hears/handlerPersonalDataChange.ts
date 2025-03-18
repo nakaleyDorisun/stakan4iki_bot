@@ -1,4 +1,3 @@
-
 import { StakanchikAI } from "../../../stakanchikAI/stakanchikAI";
 import { MyContext } from "../../../types";
 import { handleMenuSection } from "../../createFunctions/handleMenuSection";
@@ -11,7 +10,7 @@ export async function handlerPersonalDataChange(ctx: MyContext) {
     const isWaitingForPhone = ctx.session.isWaitingForPhone;
     const isWaitingForAdress = ctx.session.isWaitingForAdress;
     const isPhoneCorrect = /^\+?[0-9\s\-\(\)]{6,}$/;
-    const isAdressCorrect = message.length > 5;
+    const isAdressCorrect = message.length > 10;
     //если номер телефона введен неврено и бот ожидает ввод нового номера телефона и не ожидает ввод нового адреса
     if (
       !isPhoneCorrect.test(message) &&
@@ -24,7 +23,7 @@ export async function handlerPersonalDataChange(ctx: MyContext) {
           reply_markup: { remove_keyboard: true },
         }
       );
-      //return;
+      return;
     } else if (!isAdressCorrect) {
       // если адресс доставки введен неверно и бот ожидает ввод нового адресса и не ожидает ввода нового телефона
       await ctx.reply(
@@ -47,7 +46,12 @@ export async function handlerPersonalDataChange(ctx: MyContext) {
         simpleKeyboards.KEYBOARD_ACCOUNT
       );
       if (keyboardAccount) {
-        handleMenuSection(ctx, "Личный кабинет🔐", keyboardAccount, "account");
+        await handleMenuSection(
+          ctx,
+          "Личный кабинет🔐",
+          keyboardAccount,
+          "account"
+        );
       } else {
         console.error(
           `Ошибка: Не удалось создать клавиатуру личного кабинета. keyboardAccount = ${keyboardAccount}`
@@ -67,7 +71,12 @@ export async function handlerPersonalDataChange(ctx: MyContext) {
         simpleKeyboards.KEYBOARD_ACCOUNT
       );
       if (keyboardAccount) {
-        handleMenuSection(ctx, "Личный кабинет🔐", keyboardAccount, "account");
+        await handleMenuSection(
+          ctx,
+          "Личный кабинет🔐",
+          keyboardAccount,
+          "account"
+        );
       } else {
         console.error(
           `Ошибка: Не удалось создать клавиатуру личного кабинета. keyboardAccount = ${keyboardAccount}`

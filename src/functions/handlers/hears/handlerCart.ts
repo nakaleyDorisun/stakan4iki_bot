@@ -9,7 +9,7 @@ export async function handlerCart(ctx: MyContext) {
     simpleKeyboards.KEYBOARD_CART
   );
   if (keyboardCart) {
-    handleMenuSection(
+    await handleMenuSection(
       ctx,
       `Корзина🛒${
         ctx.session.cart.length ? `(${ctx.session.cart.length})` : " "
