@@ -61,7 +61,7 @@ export const keyboardCatalog = async (ctx: MyContext) => {
   return keyboardCatalog;
 };
 
-export const keyboardCap02 = async (ctx: MyContext) => {
+export const keyboardCap = async (ctx: MyContext) => {
   const keyboardCap02 = new Keyboard()
     .text("Добавить в Корзину🛍")
     .text(

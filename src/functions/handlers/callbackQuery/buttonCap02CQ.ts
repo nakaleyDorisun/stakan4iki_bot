@@ -1,8 +1,6 @@
 import { menus } from "../../../menus/menus";
 import { MyContext } from "../../../types";
-import { createSimpleReplyKeyboard } from "../../keyboards/createKeyboard";
-import { keyboardCap02 } from "../../keyboards/keyboardsDynamic";
-import { simpleKeyboards } from "../../keyboards/keyboardsSimple";
+import { keyboardCap } from "../../keyboards/keyboardsDynamic";
 
 export async function buttonCap02CQ(ctx: MyContext) {
   const imageURL =
@@ -10,7 +8,7 @@ export async function buttonCap02CQ(ctx: MyContext) {
   try {
     const menu = menus["button_caps02_click"];
     if (menu.callbackQuery) ctx.session.menuHistory.push(menu.callbackQuery);
-    const keyboard = await keyboardCap02(ctx);
+    const keyboard = await keyboardCap(ctx);
     await ctx.replyWithPhoto(imageURL, {
       caption: menu.text,
       reply_markup: keyboard,

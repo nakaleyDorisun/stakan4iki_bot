@@ -74,7 +74,7 @@ export const menus: IMenus = {
     ],
   },
   button_caps02_click: {
-    text: "Стаканы 0,2л - упаковка 100шт. Белые, без ресунка",
+    text: "Стаканы 0,2л - упаковка 100шт. Белые, без рисунка",
     price: 150,
     callbackQuery: "button_caps02_click",
     buttons: [
@@ -84,23 +84,23 @@ export const menus: IMenus = {
     ],
   },
   button_caps03_click: {
-    text: "Стаканы 0,3л 100шт белые",
+    text: "Стаканы 0,3л - упаковка 100шт. Белые, без рисунка",
     price: 200,
     callbackQuery: "button_caps03_click",
     buttons: [
-      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
-      { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
-      { text: "Вернуться в каталог📕", callback_data: "catalog" },
+      // { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      // { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
+      // { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_caps04_click: {
-    text: "Стаканы 0,4л 100шт белые",
+    text: "Стаканы 0,4л - упаковка 100шт. Белые, без рисунка",
     price: 250,
     callbackQuery: "button_caps03_click",
     buttons: [
-      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
-      { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
-      { text: "Вернуться в каталог📕", callback_data: "catalog" },
+      // { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      // { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
+      // { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_allTops_click: {
