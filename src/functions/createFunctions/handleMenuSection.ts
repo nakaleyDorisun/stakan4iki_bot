@@ -10,12 +10,9 @@ export async function handleMenuSection(
   menuId?: string,
   menu?: IMenuItem
 ) {
-  // console.log(menuText, "menuText");
-  // console.log(menu?.price, "menu?.price");
-  // console.log(menuId, "menuText");
-  // console.log(menu, "menu");
+  let updateMessage;
   if (menuText && menu?.price) {
-    await ctx.reply("Обновляем корзину...", {
+    updateMessage = await ctx.reply("Обновляем корзину...", {
       reply_markup: keyboard,
     });
   }
@@ -29,4 +26,7 @@ export async function handleMenuSection(
     ctx.session.menuHistory.push(menuId);
     await createInlineMenu(ctx, menuId);
   }
+  // if (updateMessage && ctx.chatId) {
+  //   await ctx.api.deleteMessage(ctx.chatId, updateMessage.message_id);
+  // }
 }

@@ -19,7 +19,7 @@ export async function buttonAddToCartCQ(ctx: MyContext) {
     await ctx.answerCallbackQuery({
       text: `Добавлено в корзину ${item.text} ✅`,
     });
-    await ctx.reply(`Добавлено в корзину ${item.text} ✅`);
+    await ctx.editMessageText(`Добавлено в корзину ${item.text} ✅`); /// ctx.reply
     const currentMenuId =
       ctx.session.menuHistory[ctx.session.menuHistory.length - 1];
     const curretnMenuText = item.text;
