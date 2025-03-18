@@ -9,7 +9,7 @@ export const menus: IMenus = {
   cart: {
     text: `Корзина`,
     callbackQuery: "cart",
-    buttons: [{ text: "Оформить заказ", callback_data: "makeOrder" }],
+    buttons: [{ text: "Оформить заказ🛍", callback_data: "makeOrder" }],
   },
   cartItem: {
     text: `cartItem`,
@@ -30,8 +30,8 @@ export const menus: IMenus = {
     text: `Заказ оформлен`,
     callbackQuery: "makeOrder",
     buttons: [
-      { text: "Доставка", callback_data: "delivery" },
-      { text: "Главное меню", callback_data: "menu" },
+      { text: "Доставка🛵", callback_data: "delivery" },
+      { text: "Главное меню📝", callback_data: "menu" },
     ],
   },
   catalog: {
@@ -70,7 +70,7 @@ export const menus: IMenus = {
       { text: "0,2л 100 шт", callback_data: "button_caps02_click" },
       { text: "0,3л 100 шт", callback_data: "button_caps03_click" },
       { text: "0,4л 100 шт", callback_data: "button_caps04_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_caps02_click: {
@@ -78,9 +78,9 @@ export const menus: IMenus = {
     price: 150,
     callbackQuery: "button_caps02_click",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Все стаканы", callback_data: "button_allCaps_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_caps03_click: {
@@ -88,9 +88,9 @@ export const menus: IMenus = {
     price: 200,
     callbackQuery: "button_caps03_click",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Все стаканы", callback_data: "button_allCaps_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_caps04_click: {
@@ -98,9 +98,9 @@ export const menus: IMenus = {
     price: 250,
     callbackQuery: "button_caps03_click",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Все стаканы", callback_data: "button_allCaps_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Все стаканы🥤", callback_data: "button_allCaps_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_allTops_click: {
@@ -110,7 +110,7 @@ export const menus: IMenus = {
       { text: "0,2л 100 шт", callback_data: "button_tops02_click" },
       { text: "0,3л 100 шт", callback_data: "button_tops03_click" },
       { text: "0,4л 100 шт", callback_data: "button_tops04_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_tops02_click: {
@@ -118,9 +118,9 @@ export const menus: IMenus = {
     price: 100,
     callbackQuery: "button_tops02_click",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Все крыЖки", callback_data: "button_allTops_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Все крышки", callback_data: "button_allTops_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_tops03_click: {
@@ -128,9 +128,9 @@ export const menus: IMenus = {
     price: 150,
     callbackQuery: "button_tops03_click",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Все крыЖки", callback_data: "button_allTops_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Все крышки", callback_data: "button_allTops_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_tops04_click: {
@@ -138,16 +138,16 @@ export const menus: IMenus = {
     price: 200,
     callbackQuery: "button_tops04_click",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Все крыЖки", callback_data: "button_allTops_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Все крышки", callback_data: "button_allTops_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_another_click: {
     text: "Раздел пока пуст",
     buttons: [
-      { text: "Добавить в корзину", callback_data: "button_addToCart_click" },
-      { text: "Вернуться в каталог", callback_data: "catalog" },
+      { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
 };

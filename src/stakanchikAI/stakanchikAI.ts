@@ -3,7 +3,6 @@ import { createReplyKeyboard } from "../functions/keyboards/createKeyboard";
 import { MyContext } from "../types";
 
 export async function StakanchikAI(ctx: MyContext) {
-  console.log("StakanchikAI");
   let isCatalog;
   let isCap;
   let isTop;
@@ -36,7 +35,6 @@ export async function StakanchikAI(ctx: MyContext) {
     if (keyboardCatalog) {
       handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
     } else {
-      // Обработка случая, когда клавиатура не была создана
       console.error("Ошибка: Не удалось создать клавиатуру каталога.");
       await ctx.reply(
         "Произошла ошибка при загрузке каталога. Попробуйте позже."

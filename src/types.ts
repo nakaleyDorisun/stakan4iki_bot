@@ -26,6 +26,7 @@ export interface SessionData {
   isWaitingForAdressChange: boolean; // бот ожидает ответ чтобы изменить адрес доставки
   isWaitingForPhoneChange: boolean; // бот ожидает ответ чтобы изменить номер телефона
   isAdmin: boolean;
+  messageId: number;
 }
 
 export interface MyContext extends Context {

@@ -33,6 +33,7 @@ bot.use(
       isWaitingForAdressChange: false,
       isWaitingForPhoneChange: false,
       isAdmin: false,
+      messageId: 0,
     }),
     storage: new MemorySessionStorage(),
   })
@@ -58,7 +59,7 @@ bot.hears("Телефон☎️", handlerHearExport.handlerPhone);
 
 bot.hears("Изменить телефон⚙️", handlerHearExport.handlerChangePhone);
 
-bot.hears("Доставка🛵", handlerHearExport.handlerDelivery);
+bot.hears(/Доставка(\((\d+)\)|\s*)/, handlerHearExport.handlerDelivery);
 
 bot.hears("Информация📋", handlerHearExport.handlerInfo);
 

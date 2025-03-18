@@ -9,6 +9,7 @@
     "prod": "node dist/index.js"
   },
   "dependencies": {
+    "@grammyjs/types": "^3.19.0",
     "dotenv": "^16.4.7",
     "grammy": "^1.35.0",
     "typescript": "^5.8.2"

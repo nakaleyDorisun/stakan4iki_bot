@@ -103,16 +103,9 @@ ${ctx.session.cart
 
   ctx.session.cart = []; // очищаем корзину
   ctx.session.totalRub = 0; // очищаем тотал прайс
-  const keyboardCart = await createReplyKeyboard(ctx, "keyboardCatalog");
-  if (keyboardCart) {
-    await handleMenuSection(
-      ctx,
-      `Корзина🛒${
-        ctx.session.cart.length ? `(${ctx.session.cart.length})` : " "
-      }`,
-      keyboardCart,
-      "cart"
-    );
+  const keyboardCatalog = await createReplyKeyboard(ctx, "keyboardCatalog");
+  if (keyboardCatalog) {
+    await handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
   } else {
     // Обработка случая, когда клавиатура не была создана
     console.error("Ошибка: Не удалось создать клавиатуру каталога.");

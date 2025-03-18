@@ -44,7 +44,7 @@ export async function createReplyKeyboard(
       .text("Личный кабинет🔐")
       .text(
         `Доставка🛵${
-          ctx.session.orders.length ? `(${ctx.session.orders.length + 1})` : " "
+          ctx.session.orders.length ? `(${ctx.session.orders.length})` : " "
         }`
       )
       .row()
@@ -66,9 +66,7 @@ export async function createReplyKeyboard(
         .text("Панель Админа🔐")
         .text(
           `Доставка🛵${
-            ctx.session.orders.length
-              ? `(${ctx.session.orders.length + 1})`
-              : " "
+            ctx.session.orders.length ? `(${ctx.session.orders.length})` : " "
           }`
         )
         .row()
