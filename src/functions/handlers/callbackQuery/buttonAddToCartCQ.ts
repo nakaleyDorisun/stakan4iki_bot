@@ -17,9 +17,11 @@ export async function buttonAddToCartCQ(ctx: MyContext) {
       });
 
     await ctx.answerCallbackQuery({
-      text: `Добавлено в корзину ${item.text} ✅`,
+      text: `Добавлено в корзину ${item.text} ✅ - ${item.amount} уп.`,
     });
-    await ctx.reply(`Добавлено в корзину ${item.text} ✅`);
+    await ctx.editMessageText(
+      `Добавлено в корзину ${item.text} ✅ - ${item.amount} уп.`
+    );
     const currentMenuId =
       ctx.session.menuHistory[ctx.session.menuHistory.length - 1];
     const curretnMenuText = item.text;

@@ -39,7 +39,7 @@ export const menus: IMenus = {
     callbackQuery: "catalog",
     buttons: [
       { text: "Стаканы 🥤", callback_data: "button_allCaps_click" },
-      { text: "КрыЖки☕️", callback_data: "button_allTops_click" },
+      { text: "Крышки☕️", callback_data: "button_allTops_click" },
       { text: "Прочее товары", callback_data: "button_another_click" },
     ],
   },
@@ -76,6 +76,7 @@ export const menus: IMenus = {
   button_caps02_click: {
     text: "Стаканы 0,2л 100шт белые",
     price: 150,
+    amount: 1,
     callbackQuery: "button_caps02_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -86,6 +87,7 @@ export const menus: IMenus = {
   button_caps03_click: {
     text: "Стаканы 0,3л 100шт белые",
     price: 200,
+    amount: 1,
     callbackQuery: "button_caps03_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -96,6 +98,7 @@ export const menus: IMenus = {
   button_caps04_click: {
     text: "Стаканы 0,4л 100шт белые",
     price: 250,
+    amount: 1,
     callbackQuery: "button_caps03_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -116,30 +119,33 @@ export const menus: IMenus = {
   button_tops02_click: {
     text: "Крышки для стаканов 0,2л 100шт черные",
     price: 100,
+    amount: 1,
     callbackQuery: "button_tops02_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
-      { text: "Все крышки", callback_data: "button_allTops_click" },
+      { text: "Все крышки☕️", callback_data: "button_allTops_click" },
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_tops03_click: {
     text: "Крышки для стаканов 0,3л 100шт черные",
     price: 150,
+    amount: 1,
     callbackQuery: "button_tops03_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
-      { text: "Все крышки", callback_data: "button_allTops_click" },
+      { text: "Все крышки☕️", callback_data: "button_allTops_click" },
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
   button_tops04_click: {
     text: "Крышки для стаканов 0,4л 100шт черные",
     price: 200,
+    amount: 1,
     callbackQuery: "button_tops04_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
-      { text: "Все крышки", callback_data: "button_allTops_click" },
+      { text: "Все крышки☕️", callback_data: "button_allTops_click" },
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
