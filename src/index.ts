@@ -85,8 +85,11 @@ bot.callbackQuery("catalog", handlerCallBackQuery.buttonCatalogCQ);
 // Слушатель инлайн кнопки корзина
 bot.callbackQuery("cart", handlerCallBackQuery.buttonCartCQ);
 
-// Слушатель инлайн кнопки корзина
+// Слушатель инлайн кнопки доставка
 bot.callbackQuery("delivery", handlerCallBackQuery.buttonDeliveryCQ);
+
+// Слушатель инлайн кнопки личный кабинет
+bot.callbackQuery("account", handlerCallBackQuery.buttonAccountCQ);
 
 // Раздел каталога все стаканчики с заменой меню
 bot.callbackQuery("button_allCaps_click", handlerCallBackQuery.buttonAllCapsCQ);

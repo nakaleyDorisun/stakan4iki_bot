@@ -8,24 +8,24 @@ export async function deliveryRender(ctx: MyContext, useId?: number) {
     const menu = menus["delivery"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     const isOrder = ctx.session.orders;
+    console.log(isOrder, "isOrder");
     if (keyboard) {
+      if (isOrder.length) {
+        const message = ctx.session.orders.map((order) => order.text);
+        await ctx.editMessageText(`Список ваших заказов:${message}`, {
+          reply_markup: keyboard,
+        });
+      } else {
+        ctx.editMessageText("У вас нет заказов", {
+          reply_markup: keyboard,
+          parse_mode: "MarkdownV2",
+        });
+      }
     } else {
       console.error("Ошибка: Не удалось создать клавиатуру каталога.");
       await ctx.reply(
         "Произошла ошибка при загрузке каталога. Попробуйте позже."
       );
-    }
-
-    if (isOrder) {
-      const message = ctx.session.orders.map((order) => order.text);
-      await ctx.editMessageText(`Список ваших заказов:`, {
-        reply_markup: keyboard,
-      });
-    } else {
-      ctx.editMessageText("У вас нет заказов", {
-        reply_markup: keyboard,
-        parse_mode: "MarkdownV2",
-      });
     }
   } catch (error) {
     console.error("Произошла ошибка при загрузке меню доставки");
