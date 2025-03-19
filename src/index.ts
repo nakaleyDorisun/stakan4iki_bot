@@ -91,6 +91,9 @@ bot.callbackQuery("delivery", handlerCallBackQuery.buttonDeliveryCQ);
 // Слушатель инлайн кнопки личный кабинет
 bot.callbackQuery("account", handlerCallBackQuery.buttonAccountCQ);
 
+// Слушатель инлайн кнопки панель администратора
+bot.callbackQuery("admin", handlerCallBackQuery.buttonAdminPanelCQ);
+
 // Раздел каталога все стаканчики с заменой меню
 bot.callbackQuery("button_allCaps_click", handlerCallBackQuery.buttonAllCapsCQ);
 
