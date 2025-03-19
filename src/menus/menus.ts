@@ -153,7 +153,7 @@ export const menus: IMenus = {
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
-  button_caps04_click: {
+  caps04: {
     text: "Стаканы 0,4л 100шт белые",
     price: 250,
     amount: 1,

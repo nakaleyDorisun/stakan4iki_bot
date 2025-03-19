@@ -2,9 +2,9 @@ import { menus } from "../../../menus/menus";
 import { MyContext } from "../../../types";
 import { createInlineKeyboard } from "../../keyboards/createKeyboard";
 
-export async function buttonCap02CQ(ctx: MyContext) {
+export async function buttonCaps04CQ(ctx: MyContext) {
   try {
-    const menu = menus["caps02"];
+    const menu = menus["caps04"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     await ctx.editMessageText(menu.text, { reply_markup: keyboard });
   } catch (error) {

@@ -10,10 +10,6 @@ export async function handleMenuSection(
   menuId?: string,
   menu?: IMenuItem
 ) {
-  // console.log(menuText, "menuText");
-  // console.log(menu?.price, "menu?.price");
-  // console.log(menuId, "menuText");
-  // console.log(menu, "menu");
   if (menuText && menu?.price) {
     await ctx.reply("Обновляем корзину...", {
       reply_markup: keyboard,

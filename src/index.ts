@@ -102,11 +102,11 @@ bot.callbackQuery("allCaps", handlerCallBackQuery.buttonAllCapsCQ);
 // Раздел каталога все крышки
 bot.callbackQuery("allTops", handlerCallBackQuery.buttonAllTopsCQ);
 
-bot.callbackQuery("caps02", handlerCallBackQuery.buttonCap02CQ);
+bot.callbackQuery("caps02", handlerCallBackQuery.buttonCaps02CQ);
 
-bot.callbackQuery("caps03", handlerCallBackQuery.buttonCap03CQ);
+bot.callbackQuery("caps03", handlerCallBackQuery.buttonCaps03CQ);
 
-bot.callbackQuery("caps04", handlerCallBackQuery.buttonCap04CQ);
+bot.callbackQuery("caps04", handlerCallBackQuery.buttonCaps04CQ);
 
 bot.callbackQuery("tops02", handlerCallBackQuery.buttonTops02CQ);
 
