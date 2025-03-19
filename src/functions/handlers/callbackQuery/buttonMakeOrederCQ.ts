@@ -51,7 +51,7 @@ export async function buttonMakeOrederCQ(ctx: MyContext) {
     const messageOrderToAdmin = `
 📦 Новый заказ от пользователя ${userId}:
 ${ctx.session.cart
-  .map((e, i) => `${i + 1}. ${e.name} x${e.amounth} - ${e.price * e.amounth}₽`)
+  .map((e, i) => `${i + 1}. ${e.name} x${e.amount} - ${e.price * e.amount}₽`)
   .join("\n")}
 Итого: ${ctx.session.totalRub}₽
 
@@ -62,7 +62,7 @@ ${ctx.session.cart
     const messageOrderToUser = `
 📦 Ваш заказ офорлен:
 ${ctx.session.cart
-  .map((e, i) => `${i + 1}. ${e.name} x${e.amounth} - ${e.price * e.amounth}₽`)
+  .map((e, i) => `${i + 1}. ${e.name} x${e.amount} - ${e.price * e.amount}₽`)
   .join("\n")}
 Итого: ${ctx.session.totalRub}₽
 Номер заказ: ${orderId}
@@ -70,7 +70,7 @@ ${ctx.session.cart
     const orderText = `
 📦 Ваш заказ:
 ${ctx.session.cart
-  .map((e, i) => `${i + 1}. ${e.name} x${e.amounth} - ${e.price * e.amounth}₽`)
+  .map((e, i) => `${i + 1}. ${e.name} x${e.amount} - ${e.price * e.amount}₽`)
   .join("\n")}
 Итого: ${ctx.session.totalRub}₽
 Номер заказ: ${orderId}

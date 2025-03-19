@@ -3,7 +3,7 @@ import { Context, Keyboard } from "grammy";
 export interface Cart {
   id: string;
   name: string;
-  amounth: number;
+  amount: number;
   price: number;
 }
 
@@ -18,6 +18,7 @@ export interface SessionData {
   keyboardHistory: Keyboard[]; // Массив для хранения истории клавиатур, небходим для reply кнопки обратно
   cart: Cart[]; // Массив товар в корзине
   orders: Orders[]; // массив заказов для вкладки доставка
+  isWaitingAmountAddToCart: number; // бот ожидает ответ чтобы добавить N товаров в корзину
   phone: string | null | undefined; // номер телефона из личного кабинета
   adress: string | null | undefined; // адрес доставки из личного кабинета
   totalRub: number; // итоговая ссумма заказа
@@ -36,7 +37,7 @@ export interface MyContext extends Context {
 export interface IMenuItem {
   text: string;
   price?: number;
-  amounth?: number;
+  amount?: number;
   callbackQuery?: string;
   buttons: {
     text: string;

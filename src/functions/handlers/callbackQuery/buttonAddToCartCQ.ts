@@ -12,7 +12,7 @@ export async function buttonAddToCartCQ(ctx: MyContext) {
       ctx.session.cart.push({
         id: Date.now().toLocaleString(),
         name: item.text,
-        amounth: 1,
+        amount: 1,
         price: item.price,
       });
 

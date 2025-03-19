@@ -14,7 +14,7 @@ export async function handlerAdd2Item(ctx: MyContext) {
       const itemToCart = {
         id: Date.now().toLocaleString(),
         name: item.text,
-        amounth: 1,
+        amount: 1,
         price: item.price,
       };
       for (let i = 0; i < n; i++) {

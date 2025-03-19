@@ -17,7 +17,7 @@ export async function cartMenuRender(ctx: MyContext) {
     if (isCart) {
       const cartBodyMessage = ctx.session.cart
         .map(
-          (item) => `📍 ${item.name} - ${item.amounth} шт. - ${item.price}₽\n`
+          (item) => `📍 ${item.name} - ${item.amount} шт. - ${item.price}₽\n`
         )
         .join("");
       const cartResultMessage = `Всего в корзине товаров: ${ctx.session.cart.length} \n на сумму: ${ctx.session.totalRub}₽`;
