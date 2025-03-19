@@ -120,15 +120,20 @@ export const menus: IMenus = {
       { text: "Главное меню📝", callback_data: "menu" },
     ],
   },
-  back: {
-    text: `Назад`,
-    callbackQuery: "back",
-    buttons: [],
-  },
 
   allCaps: {
     text: "Одноразовые стаканы для горячей продукции:\n\n📍0,2л 100 шт в упаковке ➡️ 200 рублей\n\n📍0,3л 100 шт в упаковке ➡️ 250 рублей\n\n📍0,4л 100 шт в упаковке ➡️ 350 рублей",
     callbackQuery: "allCaps",
+    buttons: [
+      { text: "0,2л (100 шт)", callback_data: "caps02" },
+      { text: "0,3л (100 шт)", callback_data: "caps03" },
+      { text: "0,4л (100 шт)", callback_data: "caps04" },
+      { text: "Вернуться в каталог📕", callback_data: "catalog" },
+    ],
+  },
+  backToAllCaps: {
+    text: "Одноразовые стаканы для горячей продукции:\n\n📍0,2л 100 шт в упаковке ➡️ 200 рублей\n\n📍0,3л 100 шт в упаковке ➡️ 250 рублей\n\n📍0,4л 100 шт в упаковке ➡️ 350 рублей",
+    callbackQuery: "backToAllCaps",
     buttons: [
       { text: "0,2л (100 шт)", callback_data: "caps02" },
       { text: "0,3л (100 шт)", callback_data: "caps03" },
@@ -143,7 +148,7 @@ export const menus: IMenus = {
     callbackQuery: "caps02",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "addToCart" },
-      { text: "◀️Назад", callback_data: "back" },
+      { text: "◀️Назад", callback_data: "backToAllCaps" },
     ],
   },
   caps03: {
@@ -153,7 +158,7 @@ export const menus: IMenus = {
     callbackQuery: "caps03",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "addToCart" },
-      { text: "◀️Назад", callback_data: "back" },
+      { text: "◀️Назад", callback_data: "backToAllCaps" },
     ],
   },
   caps04: {
@@ -163,7 +168,7 @@ export const menus: IMenus = {
     callbackQuery: "caps04",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "addToCart" },
-      { text: "◀️Назад", callback_data: "back" },
+      { text: "◀️Назад", callback_data: "backToAllCaps" },
     ],
   },
   allTops: {

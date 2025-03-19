@@ -6,6 +6,7 @@ import { accountRender } from "./accountRender";
 import { adminPanelRender } from "./adminPanelRender";
 import { infoRender } from "./infoRender";
 import { allCapsRender } from "./allCapsRender";
+import { backToAllCapsRender } from "./backToAllCapsRender";
 import { allTopsRender } from "./allTopsRender";
 import { caps02Render } from "./caps02Render";
 import { caps03Render } from "./caps03Render";
@@ -24,6 +25,7 @@ export const menuRenderExport = {
   adminPanelRender,
   infoRender,
   allCapsRender,
+  backToAllCapsRender,
   allTopsRender,
   caps02Render,
   caps03Render,

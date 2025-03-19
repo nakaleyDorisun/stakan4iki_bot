@@ -4,7 +4,6 @@ import { menus } from "../../menus/menus";
 
 export async function caps02Render(ctx: MyContext, userID?: number) {
   try {
-    console.log("кусь");
     const menu = menus["caps02"];
     const imgURL =
       "https://barista-spb.ru/components/com_jshopping/files/img_products/913_bumazhniy-stakan-200ml-white.jpg";

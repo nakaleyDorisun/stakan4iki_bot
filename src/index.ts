@@ -103,10 +103,7 @@ bot.callbackQuery("allCaps", handlerCallBackQuery.buttonAllCapsCQ);
 bot.callbackQuery("allTops", handlerCallBackQuery.buttonAllTopsCQ);
 
 // СТАКАНЫ 0.2
-bot.callbackQuery("caps02", (ctx) => {
-  console.log("a tyt kycb? :(");
-  handlerCallBackQuery.buttonCaps02CQ(ctx);
-});
+bot.callbackQuery("caps02", handlerCallBackQuery.buttonCaps02CQ);
 
 bot.callbackQuery("caps03", handlerCallBackQuery.buttonCaps03CQ);
 
@@ -134,7 +131,7 @@ bot.callbackQuery("cancelDelete", handlerCallBackQuery.buttonCancelDeleteCQ);
 bot.callbackQuery("makeOrder", handlerCallBackQuery.buttonMakeOrederCQ);
 
 ////Инлайн кнопка назад
-bot.callbackQuery("back", handlerCallBackQuery.buttonBackToMenuCQ);
+bot.callbackQuery("backToAllCaps", handlerCallBackQuery.backToAllCapsCQ);
 
 //Другие инлайн кнопки
 // bot.on("callback_query", async (ctx) => {
