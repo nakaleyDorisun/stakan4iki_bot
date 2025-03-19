@@ -1,13 +1,12 @@
 import { MyContext } from "../../../types";
-import { mainMenuRender } from "../../menu-renders/mainMenuRender";
+import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonMenuCQ(ctx: MyContext) {
-  const menu = ctx.session.menuHistory;
   if (ctx.callbackQuery) {
     const userId = ctx.callbackQuery.from.id;
-    await mainMenuRender(ctx, userId);
+    await menuRenderExport.mainMenuRender(ctx, userId);
   } else {
     console.log("Ошибка buttonMenuCQ, не удалось загрузить меню");
-    await ctx.reply("Ошибка запуска бота, попрубуйте позднее");
+    await ctx.reply("Ошибка загрузки главного меню, попрубуйте позднее");
   }
 }

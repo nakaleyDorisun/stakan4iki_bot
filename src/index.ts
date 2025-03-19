@@ -69,7 +69,7 @@ bot.hears(/Доставка(\((\d+)\)|\s*)/, handlerHearExport.handlerDelivery);
 
 bot.hears("Информация📋", handlerHearExport.handlerInfo);
 
-bot.hears("Панель Админа🔐", handlerHearExport.handlerAdminPanel);
+bot.hears("Панель Админа🔏", handlerHearExport.handlerAdminPanel);
 
 bot.hears("Назад", handlerHearExport.handlerBackButton);
 
@@ -78,6 +78,15 @@ bot.on("message:text", handlerHearExport.handlerPersonalDataRegister);
 
 // Слушатель инлайн кнопки меню
 bot.callbackQuery("menu", handlerCallBackQuery.buttonMenuCQ);
+
+// Слушатель инлайн кнопки каталог
+bot.callbackQuery("catalog", handlerCallBackQuery.buttonCatalogCQ);
+
+// Слушатель инлайн кнопки корзина
+bot.callbackQuery("cart", handlerCallBackQuery.buttonCartCQ);
+
+// Слушатель инлайн кнопки корзина
+bot.callbackQuery("delivery", handlerCallBackQuery.buttonDeliveryCQ);
 
 // Раздел каталога все стаканчики с заменой меню
 bot.callbackQuery("button_allCaps_click", handlerCallBackQuery.buttonAllCapsCQ);

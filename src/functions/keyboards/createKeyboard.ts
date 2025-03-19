@@ -1,7 +1,7 @@
 import { InlineKeyboard, Keyboard } from "grammy";
 import { MyContext } from "../../types";
 
-export function createInlineKeyboard(
+export async function createInlineKeyboard(
   buttons: { text: string; callback_data: string }[]
 ) {
   const keyboard = new InlineKeyboard();

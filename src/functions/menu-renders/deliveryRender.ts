@@ -1,15 +1,14 @@
+import { menus } from "../../menus/menus";
 import { MyContext } from "../../types";
-import { createSimpleReplyKeyboard } from "../keyboards/createKeyboard";
-import { simpleKeyboards } from "../keyboards/keyboardsSimple";
+import { createInlineKeyboard } from "../keyboards/createKeyboard";
 
-export async function deliveryMenuRender(ctx: MyContext) {
+export async function deliveryRender(ctx: MyContext, useId?: number) {
   try {
-    const keyboardDeleviry = await createSimpleReplyKeyboard(
-      ctx,
-      simpleKeyboards.KEYBOARD_DELIVERY
-    );
+    ctx.session.menuHistory.push("delivery");
+    const menu = menus["delivery"];
+    const keyboard = await createInlineKeyboard(menu.buttons);
     const isOrder = ctx.session.orders;
-    if (keyboardDeleviry) {
+    if (keyboard) {
     } else {
       console.error("Ошибка: Не удалось создать клавиатуру каталога.");
       await ctx.reply(
@@ -19,12 +18,14 @@ export async function deliveryMenuRender(ctx: MyContext) {
 
     if (isOrder) {
       const message = ctx.session.orders.map((order) => order.text);
-      await ctx.reply("Список ваших заказов: ", {
-        reply_markup: keyboardDeleviry,
+      await ctx.editMessageText(`Список ваших заказов:`, {
+        reply_markup: keyboard,
       });
-      message.map(async (message) => await ctx.reply(`${message}`));
     } else {
-      ctx.reply("У вас нет заказов");
+      ctx.editMessageText("У вас нет заказов", {
+        reply_markup: keyboard,
+        parse_mode: "MarkdownV2",
+      });
     }
   } catch (error) {
     console.error("Произошла ошибка при загрузке меню доставки");

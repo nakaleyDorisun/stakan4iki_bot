@@ -1,15 +1,15 @@
 import { menus } from "../../menus/menus";
 import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
-import { cartMenuRender } from "../menu-renders/cartMenuRender";
-import { deliveryMenuRender } from "../menu-renders/deliveryMenuRender";
+import { cartRender } from "../menu-renders/cartRender";
+import { deliveryMenuRender } from "../menu-renders/deliveryRender";
 import { mainMenuRender } from "../menu-renders/mainMenuRender";
 
 // функция для отправки ботом в чат сообщения с инлайн кнопками (менюшек)
 export async function createInlineMenu(ctx: MyContext, menuId?: string) {
   try {
     if (menuId === "cart") {
-      await cartMenuRender(ctx);
+      await cartRender(ctx);
       return;
     }
     if (
@@ -24,7 +24,7 @@ export async function createInlineMenu(ctx: MyContext, menuId?: string) {
     }
     if (menuId) {
       const menu = menus[menuId];
-      const keyboard = createInlineKeyboard(menu.buttons);
+      const keyboard = await createInlineKeyboard(menu.buttons);
       await ctx.reply(menu.text, { reply_markup: keyboard });
     } else {
       await ctx.reply("Меню не найдено");
