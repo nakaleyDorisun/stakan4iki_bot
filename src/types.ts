@@ -36,6 +36,7 @@ export interface MyContext extends Context {
 export interface IMenuItem {
   text: string;
   price?: number;
+  amounth?: number;
   callbackQuery?: string;
   buttons: {
     text: string;

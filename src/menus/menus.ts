@@ -76,6 +76,7 @@ export const menus: IMenus = {
   button_caps02_click: {
     text: "Стаканы 0,2л - упаковка 100шт. Белые, без рисунка",
     price: 150,
+    amounth: 1,
     callbackQuery: "button_caps02_click",
     buttons: [
       // { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -86,6 +87,7 @@ export const menus: IMenus = {
   button_caps03_click: {
     text: "Стаканы 0,3л - упаковка 100шт. Белые, без рисунка",
     price: 200,
+    amounth: 1,
     callbackQuery: "button_caps03_click",
     buttons: [
       // { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -96,6 +98,7 @@ export const menus: IMenus = {
   button_caps04_click: {
     text: "Стаканы 0,4л - упаковка 100шт. Белые, без рисунка",
     price: 250,
+    amounth: 1,
     callbackQuery: "button_caps03_click",
     buttons: [
       // { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -116,6 +119,7 @@ export const menus: IMenus = {
   button_tops02_click: {
     text: "Крышки для стаканов 0,2л 100шт черные",
     price: 100,
+    amounth: 1,
     callbackQuery: "button_tops02_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -126,6 +130,7 @@ export const menus: IMenus = {
   button_tops03_click: {
     text: "Крышки для стаканов 0,3л 100шт черные",
     price: 150,
+    amounth: 1,
     callbackQuery: "button_tops03_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },
@@ -136,6 +141,7 @@ export const menus: IMenus = {
   button_tops04_click: {
     text: "Крышки для стаканов 0,4л 100шт черные",
     price: 200,
+    amounth: 1,
     callbackQuery: "button_tops04_click",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "button_addToCart_click" },

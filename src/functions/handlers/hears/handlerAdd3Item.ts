@@ -3,8 +3,8 @@ import { MyContext } from "../../../types";
 import { handleMenuSection } from "../../createFunctions/handleMenuSection";
 import { keyboardAddToCart } from "../../keyboards/keyboardsDynamic";
 
-export async function handlerAdd1Item(ctx: MyContext) {
-  const n = 1;
+export async function handlerAdd3Item(ctx: MyContext) {
+  let n = 3;
   const itemCardKey =
     ctx.session.menuHistory[ctx.session.menuHistory.length - 1];
   const item = menus[itemCardKey];

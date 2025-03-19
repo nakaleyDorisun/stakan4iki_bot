@@ -84,6 +84,11 @@ export const keyboardAddToCart = async (ctx: MyContext) => {
     .row()
     .text("Ввести свое количество")
     .row()
+    .text(
+      `Корзина🛒${
+        ctx.session.cart.length ? `(${ctx.session.cart.length})` : " "
+      }`
+    )
     .text("Каталог📕")
     .text("Главное меню🏡")
     .resized();
