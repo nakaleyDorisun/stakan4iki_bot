@@ -188,7 +188,7 @@ export const menus: IMenus = {
     callbackQuery: "tops02",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "addToCart" },
-      { text: "◀️Назад", callback_data: "back" },
+      { text: "◀️Назад", callback_data: "backToAllTops" },
     ],
   },
   tops03: {
@@ -198,17 +198,17 @@ export const menus: IMenus = {
     callbackQuery: "tops03",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "addToCart" },
-      { text: "◀️Назад", callback_data: "back" },
+      { text: "◀️Назад", callback_data: "backToAllTops" },
     ],
   },
   tops04: {
     text: "Крышки для стаканов 0,4л 100шт черные",
     price: 200,
     amount: 1,
-    callbackQuery: "tops04",
+    callbackQuery: "tops03",
     buttons: [
       { text: "Добавить в корзину🛍", callback_data: "addToCart" },
-      { text: "Вернуться в каталог📕", callback_data: "catalog" },
+      { text: "◀️Назад", callback_data: "backToAllTops" },
     ],
   },
   button_another_click: {

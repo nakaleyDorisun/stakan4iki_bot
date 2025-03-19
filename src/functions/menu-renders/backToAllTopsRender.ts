@@ -6,8 +6,6 @@ export async function backToAllTopsRender(ctx: MyContext, userID?: number) {
   try {
     if (ctx.chat?.id && ctx.callbackQuery?.message?.message_id) {
       const menu = menus["allTops"];
-      const chatID = ctx.chat.id;
-      const messageID = ctx.callbackQuery.message.message_id;
       const keyboard = await createInlineKeyboard(menu.buttons);
       if (keyboard) {
         ctx.session.menuHistory.push("allTops");

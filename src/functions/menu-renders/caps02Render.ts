@@ -7,7 +7,6 @@ export async function caps02Render(ctx: MyContext, userID?: number) {
     const menu = menus["caps02"];
     const imgURL =
       "https://barista-spb.ru/components/com_jshopping/files/img_products/913_bumazhniy-stakan-200ml-white.jpg";
-    const media = { type: "photo", media: imgURL, caption: menu.text }; //// ??????
 
     if (ctx.chat?.id && ctx.callbackQuery?.message) {
       const chatID = ctx.chat.id;
@@ -23,10 +22,6 @@ export async function caps02Render(ctx: MyContext, userID?: number) {
             reply_markup: keyboard,
           }
         );
-        // await ctx.editMessageText(menu.text, {
-        //   reply_markup: keyboard,
-        //   parse_mode: "MarkdownV2",
-        // });
       } else {
         await ctx.reply("Произошла ошибка создания клавиатуры");
       }
