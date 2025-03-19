@@ -8,24 +8,25 @@ export async function adminPanelRender(ctx: MyContext, userID?: number) {
     if (userID) {
       await isAdmin(ctx, userID);
     }
-    const menu = menus["menu"];
-    const menuAdmin = menus["menuAdmin"];
+    const menu = menus["admin"];
+    const menuNotAdmin = menus["noTAdmin"];
     const keyboard = await createInlineKeyboard(menu.buttons);
-    const keyboardAdmin = await createInlineKeyboard(menuAdmin.buttons);
+    const keyboardNotAdmin = await createInlineKeyboard(menuNotAdmin.buttons);
     const isAdminFlag = ctx.session.isAdmin;
 
-    if (keyboardAdmin && isAdminFlag) {
-      ctx.session.menuHistory.push("menu");
-      await ctx.editMessageText(menuAdmin.text, {
-        reply_markup: keyboardAdmin,
-        parse_mode: "MarkdownV2",
-      });
-    } else if (keyboard) {
-      ctx.session.menuHistory.push("menu");
-      await ctx.editMessageText(menu.text, {
-        reply_markup: keyboard,
-        parse_mode: "MarkdownV2",
-      });
+    if (keyboard) {
+      if (isAdminFlag) {
+        ctx.session.menuHistory.push("admin");
+        await ctx.editMessageText(menu.text, {
+          reply_markup: keyboard,
+          parse_mode: "MarkdownV2",
+        });
+      } else {
+        await ctx.editMessageText(menuNotAdmin.text, {
+          reply_markup: keyboardNotAdmin,
+          parse_mode: "MarkdownV2",
+        });
+      }
     } else {
       await ctx.reply("Произошла ошибка создания клавиатуры");
     }

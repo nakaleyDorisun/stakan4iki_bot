@@ -25,8 +25,8 @@ export const menus: IMenus = {
       { text: "Корзина🛒", callback_data: "cart" },
       { text: "Доставка🛵", callback_data: "delivery" },
       { text: "Личный Кабинет🔐", callback_data: "account" },
-      { text: "Панель Админа🔏", callback_data: "account" },
-      { text: "Информация📋", callback_data: "admin" },
+      { text: "Панель Админа🔏", callback_data: "admin" },
+      { text: "Информация📋", callback_data: "info" },
     ],
   },
   catalog: {
@@ -102,10 +102,15 @@ export const menus: IMenus = {
     text: "Панель админа",
     callbackQuery: "admin",
     buttons: [
-      { text: "Редактировать Каталог📕", callback_data: "admin" },
+      { text: "Редактировать Каталог📕", callback_data: "admin" }, //
       { text: "Список заказов🛒", callback_data: "admin" }, //
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
+  },
+  noTAdmin: {
+    text: "ВЫ НЕ АДМИН",
+    callbackQuery: "not_admin",
+    buttons: [{ text: "Главное Меню📒", callback_data: "menu" }],
   },
   makeOrder: {
     text: `Заказ оформлен`,
