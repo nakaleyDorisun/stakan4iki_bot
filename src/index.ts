@@ -102,7 +102,11 @@ bot.callbackQuery("allCaps", handlerCallBackQuery.buttonAllCapsCQ);
 // Раздел каталога все крышки
 bot.callbackQuery("allTops", handlerCallBackQuery.buttonAllTopsCQ);
 
-bot.callbackQuery("caps02", handlerCallBackQuery.buttonCaps02CQ);
+// СТАКАНЫ 0.2
+bot.callbackQuery("caps02", (ctx) => {
+  console.log("a tyt kycb? :(");
+  handlerCallBackQuery.buttonCaps02CQ(ctx);
+});
 
 bot.callbackQuery("caps03", handlerCallBackQuery.buttonCaps03CQ);
 
@@ -130,7 +134,7 @@ bot.callbackQuery("cancelDelete", handlerCallBackQuery.buttonCancelDeleteCQ);
 bot.callbackQuery("makeOrder", handlerCallBackQuery.buttonMakeOrederCQ);
 
 ////Инлайн кнопка назад
-bot.callbackQuery("back_to_menu", handlerCallBackQuery.buttonBackToMenuCQ);
+bot.callbackQuery("back", handlerCallBackQuery.buttonBackToMenuCQ);
 
 //Другие инлайн кнопки
 // bot.on("callback_query", async (ctx) => {

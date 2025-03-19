@@ -1,14 +1,12 @@
-import { menus } from "../../../menus/menus";
 import { MyContext } from "../../../types";
-import { createInlineKeyboard } from "../../keyboards/createKeyboard";
+import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonTops04CQ(ctx: MyContext) {
-  try {
-    const menu = menus["tops04"];
-    const keyboard = await createInlineKeyboard(menu.buttons);
-    await ctx.editMessageText(menu.text, { reply_markup: keyboard });
-  } catch (error) {
-    await ctx.reply("Не удалось загрузить товар");
-    console.error(error);
+  if (ctx.callbackQuery) {
+    const userId = ctx.callbackQuery.from.id;
+    await menuRenderExport.tops04Render(ctx, userId);
+  } else {
+    console.log("Ошибка tops04Render, не удалось загрузить меню");
+    await ctx.reply("Ошибка загрузки меню крышек 0,4, попрубуйте позднее");
   }
 }
