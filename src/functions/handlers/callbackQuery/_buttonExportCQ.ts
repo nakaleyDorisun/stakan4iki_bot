@@ -18,6 +18,7 @@ import { buttonCap04CQ } from "./buttonCap04CQ";
 import { buttonTops02CQ } from "./buttonTops02CQ";
 import { buttonTops03CQ } from "./buttonTops03CQ";
 import { buttonTops04CQ } from "./buttonTops04CQ";
+import { buttonInfoCQ } from "./buttonInfoCQ";
 
 export const handlerCallBackQuery = {
   buttonAddToCartCQ,
@@ -34,6 +35,7 @@ export const handlerCallBackQuery = {
   buttonDeliveryCQ,
   buttonAccountCQ,
   buttonAdminPanelCQ,
+  buttonInfoCQ,
   buttonCap02CQ,
   buttonCap03CQ,
   buttonCap04CQ,

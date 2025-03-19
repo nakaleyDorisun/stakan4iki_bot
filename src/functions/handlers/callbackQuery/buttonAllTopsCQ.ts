@@ -1,9 +1,12 @@
-import { menus } from "../../../menus/menus";
 import { MyContext } from "../../../types";
-import { createInlineKeyboard } from "../../keyboards/createKeyboard";
+import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonAllTopsCQ(ctx: MyContext) {
-  const menu = menus["button_allTops_click"];
-  const keyboard = createInlineKeyboard(menu.buttons);
-  await ctx.editMessageText(menu.text, { reply_markup: keyboard });
+  if (ctx.callbackQuery) {
+    const userId = ctx.callbackQuery.from.id;
+    await menuRenderExport.allTopsRender(ctx, userId);
+  } else {
+    console.log("Ошибка buttonAllTopsCQ, не удалось загрузить меню");
+    await ctx.reply("Ошибка загрузки меню каталога крышек, попрубуйте позднее");
+  }
 }

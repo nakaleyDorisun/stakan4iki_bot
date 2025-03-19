@@ -4,9 +4,8 @@ import { createInlineKeyboard } from "../../keyboards/createKeyboard";
 
 export async function buttonCap04CQ(ctx: MyContext) {
   try {
-    const menu = menus["button_caps03_click"];
-    if (menu.callbackQuery) ctx.session.menuHistory.push(menu.callbackQuery);
-    const keyboard = createInlineKeyboard(menu.buttons);
+    const menu = menus["caps04"];
+    const keyboard = await createInlineKeyboard(menu.buttons);
     await ctx.editMessageText(menu.text, { reply_markup: keyboard });
   } catch (error) {
     await ctx.reply("Не удалось загрузить товар");

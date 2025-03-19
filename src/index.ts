@@ -10,7 +10,6 @@ import { MyContext, SessionData } from "./types";
 import { handlerHearExport } from "./functions/handlers/hears/_handlerHearExport";
 import { handlerCallBackQuery } from "./functions/handlers/callbackQuery/_buttonExportCQ";
 import { startCommand } from "./functions/handlers/commands/startCommand";
-import { createInlineMenu } from "./functions/createFunctions/createInlineMenu";
 
 dotenv.config();
 const botToken = process.env.BOT_TOKEN;
@@ -49,62 +48,74 @@ bot.use(
 bot.command("start", startCommand);
 
 //Слушатели Reply кнопок
-bot.hears("Главное меню🏡", handlerHearExport.handlerMainMenu);
+// bot.hears("Главное меню🏡", handlerHearExport.handlerMainMenu);
 
-bot.hears("Каталог📕", handlerHearExport.handlerCatalog);
+// bot.hears("Каталог📕", handlerHearExport.handlerCatalog);
 
-bot.hears(/Корзина(\((\d+)\)|\s*)/, handlerHearExport.handlerCart);
+// bot.hears(/Корзина(\((\d+)\)|\s*)/, handlerHearExport.handlerCart);
 
-bot.hears("Личный кабинет🔐", handlerHearExport.handlerAccoutn);
+// bot.hears("Личный кабинет🔐", handlerHearExport.handlerAccoutn);
 
-bot.hears("Адрес🏠", handlerHearExport.handlerAdress);
+// bot.hears("Адрес🏠", handlerHearExport.handlerAdress);
 
-bot.hears("Изменить адрес⚙️", handlerHearExport.handlerChangeAdress);
+// bot.hears("Изменить адрес⚙️", handlerHearExport.handlerChangeAdress);
 
-bot.hears("Телефон☎️", handlerHearExport.handlerPhone);
+// bot.hears("Телефон☎️", handlerHearExport.handlerPhone);
 
-bot.hears("Изменить телефон⚙️", handlerHearExport.handlerChangePhone);
+// bot.hears("Изменить телефон⚙️", handlerHearExport.handlerChangePhone);
 
-bot.hears(/Доставка(\((\d+)\)|\s*)/, handlerHearExport.handlerDelivery);
+// bot.hears(/Доставка(\((\d+)\)|\s*)/, handlerHearExport.handlerDelivery);
 
-bot.hears("Информация📋", handlerHearExport.handlerInfo);
+// bot.hears("Информация📋", handlerHearExport.handlerInfo);
 
-bot.hears("Панель Админа🔏", handlerHearExport.handlerAdminPanel);
+// bot.hears("Панель Админа🔏", handlerHearExport.handlerAdminPanel);
 
-bot.hears("Назад", handlerHearExport.handlerBackButton);
+// bot.hears("Назад", handlerHearExport.handlerBackButton);
 
 // Слушатель ввода/замены адреса и телефона
 bot.on("message:text", handlerHearExport.handlerPersonalDataRegister);
 
-// Слушатель инлайн кнопки меню
+// Слушатель инлайн кнопки МЕНЮ
 bot.callbackQuery("menu", handlerCallBackQuery.buttonMenuCQ);
 
-// Слушатель инлайн кнопки каталог
+// Слушатель инлайн кнопки КАТАЛОГ
 bot.callbackQuery("catalog", handlerCallBackQuery.buttonCatalogCQ);
 
-// Слушатель инлайн кнопки корзина
+// Слушатель инлайн кнопки КОРЗИНА
 bot.callbackQuery("cart", handlerCallBackQuery.buttonCartCQ);
 
-// Слушатель инлайн кнопки доставка
+// Слушатель инлайн кнопки ДОСТАВКА
 bot.callbackQuery("delivery", handlerCallBackQuery.buttonDeliveryCQ);
 
-// Слушатель инлайн кнопки личный кабинет
+// Слушатель инлайн кнопки ЛИЧНЫЙ КАБИНЕТ
 bot.callbackQuery("account", handlerCallBackQuery.buttonAccountCQ);
 
-// Слушатель инлайн кнопки панель администратора
+// Слушатель инлайн кнопки ПАНЕЛЬ АДМИНИСТРАТОРА
 bot.callbackQuery("admin", handlerCallBackQuery.buttonAdminPanelCQ);
 
-// Раздел каталога все стаканчики с заменой меню
-bot.callbackQuery("button_allCaps_click", handlerCallBackQuery.buttonAllCapsCQ);
+// Слушатель инлайн кнопки ИНФОРМАЦИЯ
+bot.callbackQuery("info", handlerCallBackQuery.buttonInfoCQ);
 
-// Раздел каталога все крышки с заменой меню
-bot.callbackQuery("button_allTops_click", handlerCallBackQuery.buttonAllTopsCQ);
+// Раздел каталога все стаканчики
+bot.callbackQuery("allCaps", handlerCallBackQuery.buttonAllCapsCQ);
+
+// Раздел каталога все крышки
+bot.callbackQuery("allTops", handlerCallBackQuery.buttonAllTopsCQ);
+
+bot.callbackQuery("caps02", handlerCallBackQuery.buttonCap02CQ);
+
+bot.callbackQuery("caps03", handlerCallBackQuery.buttonCap03CQ);
+
+bot.callbackQuery("caps04", handlerCallBackQuery.buttonCap04CQ);
+
+bot.callbackQuery("tops02", handlerCallBackQuery.buttonTops02CQ);
+
+bot.callbackQuery("tops03", handlerCallBackQuery.buttonTops03CQ);
+
+bot.callbackQuery("tops04", handlerCallBackQuery.buttonTops04CQ);
 
 //Инлайн кнопка добавить в корзину
-bot.callbackQuery(
-  "button_addToCart_click",
-  handlerCallBackQuery.buttonAddToCartCQ
-);
+bot.callbackQuery("addToCart", handlerCallBackQuery.buttonAddToCartCQ);
 
 //Инлайн кнопка очистить карзину
 bot.callbackQuery("deleteItems", handlerCallBackQuery.buttonDeleteItemsCQ);
@@ -121,34 +132,22 @@ bot.callbackQuery("makeOrder", handlerCallBackQuery.buttonMakeOrederCQ);
 ////Инлайн кнопка назад
 bot.callbackQuery("back_to_menu", handlerCallBackQuery.buttonBackToMenuCQ);
 
-bot.callbackQuery("button_caps02_click", handlerCallBackQuery.buttonCap02CQ);
-
-bot.callbackQuery("button_caps03_click", handlerCallBackQuery.buttonCap03CQ);
-
-bot.callbackQuery("button_caps04_click", handlerCallBackQuery.buttonCap04CQ);
-
-bot.callbackQuery("button_tops02_click", handlerCallBackQuery.buttonTops02CQ);
-
-bot.callbackQuery("button_tops03_click", handlerCallBackQuery.buttonTops03CQ);
-
-bot.callbackQuery("button_tops04_click", handlerCallBackQuery.buttonTops04CQ);
-
 //Другие инлайн кнопки
-bot.on("callback_query", async (ctx) => {
-  const action = ctx.callbackQuery.data;
-  if (
-    action &&
-    action !== "menu" &&
-    action !== "back_to_menu" &&
-    action !== "cart" &&
-    action !== "makeOrder" &&
-    action !== "deleteItems"
-  ) {
-    // Проверка callback_data
-    ctx.session.menuHistory.push(action);
-    await createInlineMenu(ctx, action);
-  }
-});
+// bot.on("callback_query", async (ctx) => {
+//   const action = ctx.callbackQuery.data;
+//   if (
+//     action &&
+//     action !== "menu" &&
+//     action !== "back_to_menu" &&
+//     action !== "cart" &&
+//     action !== "makeOrder" &&
+//     action !== "deleteItems"
+//   ) {
+//     // Проверка callback_data
+//     ctx.session.menuHistory.push(action);
+//     await createInlineMenu(ctx, action);
+//   }
+// });
 
 bot.catch((error) => {
   const ctx = error.ctx;

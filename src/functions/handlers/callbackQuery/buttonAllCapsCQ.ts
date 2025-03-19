@@ -1,9 +1,14 @@
-import { menus } from "../../../menus/menus";
 import { MyContext } from "../../../types";
-import { createInlineKeyboard } from "../../keyboards/createKeyboard";
+import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonAllCapsCQ(ctx: MyContext) {
-  const menu = menus["button_allCaps_click"];
-  const keyboard = createInlineKeyboard(menu.buttons);
-  await ctx.editMessageText(menu.text, { reply_markup: keyboard });
+  if (ctx.callbackQuery) {
+    const userId = ctx.callbackQuery.from.id;
+    await menuRenderExport.allCapsRender(ctx, userId);
+  } else {
+    console.log("Ошибка buttonAllCapsCQ, не удалось загрузить меню");
+    await ctx.reply(
+      "Ошибка загрузки меню каталога стаканов, попрубуйте позднее"
+    );
+  }
 }
