@@ -132,14 +132,9 @@ export const menus: IMenus = {
     ],
   },
   backToAllCaps: {
-    text: "Одноразовые стаканы для горячей продукции:\n\n📍0,2л 100 шт в упаковке ➡️ 200 рублей\n\n📍0,3л 100 шт в упаковке ➡️ 250 рублей\n\n📍0,4л 100 шт в упаковке ➡️ 350 рублей",
+    text: "",
     callbackQuery: "backToAllCaps",
-    buttons: [
-      { text: "0,2л (100 шт)", callback_data: "caps02" },
-      { text: "0,3л (100 шт)", callback_data: "caps03" },
-      { text: "0,4л (100 шт)", callback_data: "caps04" },
-      { text: "Вернуться в каталог📕", callback_data: "catalog" },
-    ],
+    buttons: [],
   },
   caps02: {
     text: "Стаканы 0,2л 100шт белые",
@@ -180,6 +175,11 @@ export const menus: IMenus = {
       { text: "0,4л (100 шт)", callback_data: "tops04" },
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
+  },
+  backToAllTops: {
+    text: "",
+    callbackQuery: "backToAllTops",
+    buttons: [],
   },
   tops02: {
     text: "Крышки для стаканов 0,2л 100шт черные",

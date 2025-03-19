@@ -8,6 +8,7 @@ import { infoRender } from "./infoRender";
 import { allCapsRender } from "./allCapsRender";
 import { backToAllCapsRender } from "./backToAllCapsRender";
 import { allTopsRender } from "./allTopsRender";
+import { backToAllTopsRender } from "./backToAllTopsRender";
 import { caps02Render } from "./caps02Render";
 import { caps03Render } from "./caps03Render";
 import { caps04Render } from "./caps04Render";
@@ -27,6 +28,7 @@ export const menuRenderExport = {
   allCapsRender,
   backToAllCapsRender,
   allTopsRender,
+  backToAllTopsRender,
   caps02Render,
   caps03Render,
   caps04Render,

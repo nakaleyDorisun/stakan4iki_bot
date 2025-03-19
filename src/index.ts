@@ -132,7 +132,7 @@ bot.callbackQuery("makeOrder", handlerCallBackQuery.buttonMakeOrederCQ);
 
 ////Инлайн кнопка назад
 bot.callbackQuery("backToAllCaps", handlerCallBackQuery.backToAllCapsCQ);
-
+bot.callbackQuery("backToAllTops", handlerCallBackQuery.backToAllTopsCQ);
 //Другие инлайн кнопки
 // bot.on("callback_query", async (ctx) => {
 //   const action = ctx.callbackQuery.data;

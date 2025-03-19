@@ -1,7 +1,8 @@
 import { buttonAddToCartCQ } from "./buttonAddToCartCQ";
 import { buttonAllCapsCQ } from "./buttonAllCapsCQ";
-import { buttonAllTopsCQ } from "./buttonAllTopsCQ";
 import { backToAllCapsCQ } from "./backToAllCapsCQ";
+import { buttonAllTopsCQ } from "./buttonAllTopsCQ";
+import { backToAllTopsCQ } from "./backToAllTopsCQ";
 import { buttonCancelDeleteCQ } from "./buttonCancelDeleteCQ";
 import { buttonConfirmDeleteCQ } from "./buttonConfirmDeleteCQ";
 import { buttonDeleteItemsCQ } from "./buttonDeleteItemsCQ";
@@ -23,8 +24,9 @@ import { buttonInfoCQ } from "./buttonInfoCQ";
 export const handlerCallBackQuery = {
   buttonAddToCartCQ,
   buttonAllCapsCQ,
-  buttonAllTopsCQ,
   backToAllCapsCQ,
+  buttonAllTopsCQ,
+  backToAllTopsCQ,
   buttonCancelDeleteCQ,
   buttonConfirmDeleteCQ,
   buttonDeleteItemsCQ,
