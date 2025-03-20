@@ -1,4 +1,3 @@
-import { createInlineMenu } from "../../createFunctions/createInlineMenu";
 import { MyContext } from "../../../types";
 import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
@@ -11,5 +10,6 @@ export async function buttonConfirmDeleteCQ(ctx: MyContext) {
     await ctx.reply(
       "Ошибка загрузки подтверждения очистки корзины, попрубуйте позднее"
     );
+    // await ctx.api.deleteMessages()
   }
 }

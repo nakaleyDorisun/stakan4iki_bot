@@ -16,12 +16,16 @@ export async function addToCartRender(ctx: MyContext) {
       await ctx.answerCallbackQuery({
         text: `Добавлено в корзину ${menu.text} ➡️ ${menu.amount} уп✅`,
       });
-      await ctx.reply(
+      const message = await ctx.reply(
         `Добавлено в корзину ${menu.text} ➡️ ${menu.amount} уп✅`
       );
-      //   const currentMenuId =
-      //     ctx.session.menuHistory.slice(-1)[0];
-      //   const curretnMenuText = menu.text;
+      if (message) {
+        ctx.session.messagesAddToCart.push(message.message_id);
+        console.log(ctx.session.messagesAddToCart);
+      } else {
+        console.log("!message"); // допилить нормальный обработчик
+      }
+
       const keyboard = await createInlineKeyboard(menu.buttons);
       if (menu.price) ctx.session.totalRub += menu.price;
       if (keyboard) {

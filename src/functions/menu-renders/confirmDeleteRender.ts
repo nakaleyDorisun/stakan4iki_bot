@@ -11,6 +11,11 @@ export async function confirmDeleteRender(ctx: MyContext, userID?: number) {
         text: `Корзина очищена✅`,
       });
       await ctx.editMessageText(`Корзина очищена✅`);
+      if (ctx.chat?.id && ctx.session.messagesAddToCart)
+        await ctx.api.deleteMessages(
+          ctx.chat.id,
+          ctx.session.messagesAddToCart
+        );
       await cartRender(ctx);
     } else {
       await ctx.reply("Нечего удалять");

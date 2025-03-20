@@ -39,6 +39,7 @@ bot.use(
       isWaitingForPhoneChange: false,
       isAdmin: false,
       messageId: 0,
+      messagesAddToCart: [],
     }),
     storage: new MemorySessionStorage(),
   })

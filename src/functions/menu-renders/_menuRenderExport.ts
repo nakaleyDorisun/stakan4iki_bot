@@ -1,5 +1,5 @@
 import { mainMenuRender } from "./mainMenuRender";
-import { catalogRender } from "./CatalogRender";
+import { catalogRender } from "./catalogRender";
 import { cartRender } from "./cartRender";
 import { deleteItemsRender } from "./deleteItemsRender";
 import { confirmDeleteRender } from "./confirmDeleteRender";
