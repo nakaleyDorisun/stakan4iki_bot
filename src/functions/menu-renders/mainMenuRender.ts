@@ -2,6 +2,7 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { isAdmin } from "../admin/isAdmin";
 import { menus } from "../../menus/menus";
+import { resetInputFlags } from "./resetInputFlags";
 
 export async function mainMenuRender(ctx: MyContext, userID?: number) {
   try {
@@ -13,6 +14,7 @@ export async function mainMenuRender(ctx: MyContext, userID?: number) {
     const keyboard = await createInlineKeyboard(menu.buttons);
     const keyboardAdmin = await createInlineKeyboard(menuAdmin.buttons);
     const isAdminFlag = ctx.session.isAdmin;
+    await resetInputFlags(ctx);
 
     if (keyboardAdmin && isAdminFlag) {
       ctx.session.menuHistory.push("menu");

@@ -25,10 +25,10 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
       if (isPhoneCorrect.test(message) /*&& chatID && messageID*/) {
         ctx.session.phone = message;
         ctx.session.isWaitingForPhone = false;
-        // await ctx.deleteMessage();
         await ctx.reply(`Вы установили телефон: ${ctx.session.phone}`, {
           reply_markup: keyboardPhone,
         });
+        // await ctx.deleteMessage();
       } else {
         // await ctx.deleteMessage();
         await ctx.reply(

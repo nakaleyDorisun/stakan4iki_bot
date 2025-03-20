@@ -1,6 +1,6 @@
 import { MyContext } from "../../types";
 
-export function resetInputFlags(ctx: MyContext) {
+export async function resetInputFlags(ctx: MyContext) {
   if (ctx.session) {
     ctx.session.isWaitingForAdress = false;
     ctx.session.isWaitingForPhone = false;

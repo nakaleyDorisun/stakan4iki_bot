@@ -11,7 +11,7 @@ export async function accountRender(ctx: MyContext, userID?: number) {
     const id = ctx.from?.id;
     const isAdress = ctx.session.adress;
     const isPhone = ctx.session.phone;
-    resetInputFlags(ctx);
+    await resetInputFlags(ctx);
     if (keyboard) {
       if (isAdress && isPhone) {
         await ctx.editMessageText(
