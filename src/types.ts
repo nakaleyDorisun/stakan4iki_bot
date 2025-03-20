@@ -16,6 +16,7 @@ export interface Orders {
 export interface SessionData {
   menuHistory: string[]; // Массив для хранения истории меню, необходим для инлайн кнопки обрано
   keyboardHistory: Keyboard[]; // Массив для хранения истории клавиатур, небходим для reply кнопки обратно
+  messageId: number; //
   cart: Cart[]; // Массив товар в корзине
   orders: Orders[]; // массив заказов для вкладки доставка
   phone: string | null | undefined; // номер телефона из личного кабинета
@@ -26,7 +27,6 @@ export interface SessionData {
   isWaitingForAdressChange: boolean; // бот ожидает ответ чтобы изменить адрес доставки
   isWaitingForPhoneChange: boolean; // бот ожидает ответ чтобы изменить номер телефона
   isAdmin: boolean;
-  messageId: number;
 }
 
 export interface MyContext extends Context {
