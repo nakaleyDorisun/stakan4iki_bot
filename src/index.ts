@@ -92,6 +92,7 @@ bot.callbackQuery("account", handlerCallBackQuery.buttonAccountCQ);
 
 // Слушатель инлайн кнопки АДРЕСС
 bot.callbackQuery("adress", handlerCallBackQuery.buttonAdressCQ);
+
 // Слушатель инлайн кнопки ТЕЛЕФОН
 bot.callbackQuery("phone", handlerCallBackQuery.buttonPhoneCQ);
 
@@ -138,23 +139,6 @@ bot.callbackQuery("makeOrder", handlerCallBackQuery.buttonMakeOrederCQ);
 ////Инлайн кнопка назад
 bot.callbackQuery("backToAllCaps", handlerCallBackQuery.backToAllCapsCQ);
 bot.callbackQuery("backToAllTops", handlerCallBackQuery.backToAllTopsCQ);
-
-//Другие инлайн кнопки
-// bot.on("callback_query", async (ctx) => {
-//   const action = ctx.callbackQuery.data;
-//   if (
-//     action &&
-//     action !== "menu" &&
-//     action !== "back_to_menu" &&
-//     action !== "cart" &&
-//     action !== "makeOrder" &&
-//     action !== "deleteItems"
-//   ) {
-//     // Проверка callback_data
-//     ctx.session.menuHistory.push(action);
-//     await createInlineMenu(ctx, action);
-//   }
-// });
 
 bot.catch((error) => {
   const ctx = error.ctx;
