@@ -47,16 +47,37 @@ export const menus: IMenus = {
     callbackQuery: "cart",
     buttons: [
       { text: "Оформить заказ🛍", callback_data: "makeOrder" },
-      // { text: "Каталог📕", callback_data: "catalog" },
-      // { text: "Доставка🛵", callback_data: "delivery" },
-      // { text: "Личный кабинет🔐", callback_data: "account" },
+      { text: "Очистить корзину🛒", callback_data: "deleteItems" },
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
-  cartItem: {
-    text: `cartItem`,
-    callbackQuery: "cartItem",
-    buttons: [{ text: "Очистить карзину", callback_data: "deleteItems" }],
+  cartEmpty: {
+    text: `Корзина`,
+    callbackQuery: "cartEmpty",
+    buttons: [
+      { text: "Каталог📕", callback_data: "catalog" },
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
+  deleteItems: {
+    text: `Очистить корзину`,
+    callbackQuery: "deleteItems",
+    buttons: [
+      { text: "Да✅", callback_data: "confirmDelete" },
+      { text: "Нет❌", callback_data: "cancelDelete" }, // cart
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
+  addToCart: {
+    text: `Добавить в Корзину`,
+    callbackQuery: "addToCart",
+    buttons: [
+      { text: "Оформить заказ🛍", callback_data: "makeOrder" },
+      // { text: "Каталог📕", callback_data: "catalog" },
+      // { text: "Доставка🛵", callback_data: "delivery" },
+      { text: "Корзина🛒 А ТЫ ПИДОР", callback_data: "cart" },
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
   },
   delivery: {
     text: "Доставка",
@@ -78,7 +99,7 @@ export const menus: IMenus = {
     ],
   },
   adress: {
-    text: "Хотите изменить ваш адрес доставки?",
+    text: "Адрес доставки",
     callbackQuery: "adress",
     buttons: [
       { text: "Изменить адрес⚙️", callback_data: "adress" }, //
@@ -86,7 +107,7 @@ export const menus: IMenus = {
     ],
   },
   phone: {
-    text: "Хотите изменить ваш номер телефона?",
+    text: "Контактный телефон",
     callbackQuery: "phone",
     buttons: [
       { text: "Изменить телефон⚙️", callback_data: "phone" }, //
@@ -120,7 +141,6 @@ export const menus: IMenus = {
       { text: "Главное меню📝", callback_data: "menu" },
     ],
   },
-
   allCaps: {
     text: "Одноразовые стаканы для горячей продукции:\n\n📍0,2л 100 шт в упаковке ➡️ 200 рублей\n\n📍0,3л 100 шт в упаковке ➡️ 250 рублей\n\n📍0,4л 100 шт в упаковке ➡️ 350 рублей",
     callbackQuery: "allCaps",
@@ -128,6 +148,7 @@ export const menus: IMenus = {
       { text: "0,2л (100 шт)", callback_data: "caps02" },
       { text: "0,3л (100 шт)", callback_data: "caps03" },
       { text: "0,4л (100 шт)", callback_data: "caps04" },
+      { text: "Корзина🛒", callback_data: "cart" },
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },
@@ -173,6 +194,7 @@ export const menus: IMenus = {
       { text: "0,2л (100 шт)", callback_data: "tops02" },
       { text: "0,3л (100 шт)", callback_data: "tops03" },
       { text: "0,4л (100 шт)", callback_data: "tops04" },
+      { text: "Корзина🛒", callback_data: "cart" },
       { text: "Вернуться в каталог📕", callback_data: "catalog" },
     ],
   },

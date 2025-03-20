@@ -2,7 +2,6 @@ import { menus } from "../../menus/menus";
 import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { cartRender } from "../menu-renders/cartRender";
-import { deliveryMenuRender } from "../menu-renders/deliveryRender";
 import { mainMenuRender } from "../menu-renders/mainMenuRender";
 
 // функция для отправки ботом в чат сообщения с инлайн кнопками (менюшек)
@@ -19,7 +18,6 @@ export async function createInlineMenu(ctx: MyContext, menuId?: string) {
       return;
     }
     if (menuId === "delivery") {
-      await deliveryMenuRender(ctx);
       return;
     }
     if (menuId) {

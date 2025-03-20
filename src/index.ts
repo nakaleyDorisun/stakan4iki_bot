@@ -90,6 +90,11 @@ bot.callbackQuery("delivery", handlerCallBackQuery.buttonDeliveryCQ);
 // Слушатель инлайн кнопки ЛИЧНЫЙ КАБИНЕТ
 bot.callbackQuery("account", handlerCallBackQuery.buttonAccountCQ);
 
+// Слушатель инлайн кнопки АДРЕСС
+bot.callbackQuery("adress", handlerCallBackQuery.buttonAdressCQ);
+// Слушатель инлайн кнопки ТЕЛЕФОН
+bot.callbackQuery("phone", handlerCallBackQuery.buttonPhoneCQ);
+
 // Слушатель инлайн кнопки ПАНЕЛЬ АДМИНИСТРАТОРА
 bot.callbackQuery("admin", handlerCallBackQuery.buttonAdminPanelCQ);
 
