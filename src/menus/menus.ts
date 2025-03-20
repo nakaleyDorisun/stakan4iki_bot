@@ -106,11 +106,27 @@ export const menus: IMenus = {
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
+  adressEmpty: {
+    text: "Адрес доставки не указан",
+    callbackQuery: "adressEmpty",
+    buttons: [
+      { text: "Вернуться в Личный Кабинет🔐", callback_data: "account" }, //
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
   phone: {
     text: "Контактный телефон",
     callbackQuery: "phone",
     buttons: [
       { text: "Изменить телефон⚙️", callback_data: "phone" }, //
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
+  phoneEmpty: {
+    text: "Адрес доставки не указан",
+    callbackQuery: "phoneEmpty",
+    buttons: [
+      { text: "Вернуться в Личный Кабинет🔐", callback_data: "account" }, //
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },

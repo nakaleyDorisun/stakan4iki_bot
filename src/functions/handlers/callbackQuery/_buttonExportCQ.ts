@@ -13,7 +13,9 @@ import { buttonCartCQ } from "./buttonCartCQ";
 import { buttonDeliveryCQ } from "./buttonDeliveryCQ";
 import { buttonAccountCQ } from "./buttonAccountCQ";
 import { buttonAdressCQ } from "./buttonAdressCQ";
+import { buttonAdressEmptyCQ } from "./buttonAdressEmptyCQ";
 import { buttonPhoneCQ } from "./buttonPhoneCQ";
+import { buttonPhoneEmptyCQ } from "./buttonPhoneEmptyCQ";
 import { buttonAdminPanelCQ } from "./buttonAdminPanelCQ";
 import { buttonCaps02CQ } from "./buttonCaps02CQ";
 import { buttonCaps03CQ } from "./buttonCaps03CQ";
@@ -39,7 +41,9 @@ export const handlerCallBackQuery = {
   buttonDeliveryCQ,
   buttonAccountCQ,
   buttonAdressCQ,
+  buttonAdressEmptyCQ,
   buttonPhoneCQ,
+  buttonPhoneEmptyCQ,
   buttonAdminPanelCQ,
   buttonInfoCQ,
   buttonCaps02CQ,
