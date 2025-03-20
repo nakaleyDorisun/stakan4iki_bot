@@ -102,7 +102,7 @@ export const menus: IMenus = {
     text: "Адрес доставки",
     callbackQuery: "adress",
     buttons: [
-      { text: "Изменить адрес⚙️", callback_data: "adress" }, //
+      { text: "Изменить адрес⚙️", callback_data: "adressChange" },
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
@@ -114,11 +114,19 @@ export const menus: IMenus = {
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
+  adressChange: {
+    text: "Изменить адрес доставки",
+    callbackQuery: "adressChange",
+    buttons: [
+      // { text: "Изменить адрес⚙️", callback_data: "adress" }, //
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
   phone: {
     text: "Контактный телефон",
     callbackQuery: "phone",
     buttons: [
-      { text: "Изменить телефон⚙️", callback_data: "phone" }, //
+      { text: "Изменить телефон⚙️", callback_data: "phoneChange" },
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
@@ -127,6 +135,14 @@ export const menus: IMenus = {
     callbackQuery: "phoneEmpty",
     buttons: [
       { text: "Вернуться в Личный Кабинет🔐", callback_data: "account" }, //
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
+  phoneChange: {
+    text: "Изменить контактный телефон",
+    callbackQuery: "phoneChange",
+    buttons: [
+      // { text: "Изменить адрес⚙️", callback_data: "adress" }, //
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },

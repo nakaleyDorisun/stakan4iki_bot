@@ -4,6 +4,7 @@ import { menus } from "../../menus/menus";
 
 export async function catalogRender(ctx: MyContext, userID?: number) {
   try {
+    console.log("kycb");
     const menu = menus["catalog"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {

@@ -7,6 +7,8 @@ import { cancelDeleteRender } from "./cancelDeleteRender";
 import { deliveryRender } from "./deliveryRender";
 import { accountRender } from "./accountRender";
 import { adressRender } from "./adressRender";
+import { adressChangeRender } from "./adressChangeRender";
+import { phoneChangeRender } from "./phoneChangeRender";
 import { phoneRender } from "./phoneRender";
 import { adminPanelRender } from "./adminPanelRender";
 import { infoRender } from "./infoRender";
@@ -33,6 +35,8 @@ export const menuRenderExport = {
   deliveryRender,
   accountRender,
   adressRender,
+  adressChangeRender,
+  phoneChangeRender,
   phoneRender,
   adminPanelRender,
   infoRender,

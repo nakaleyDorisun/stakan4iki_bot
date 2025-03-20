@@ -2,14 +2,14 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 
-export async function adressEmptyRender(ctx: MyContext, userID?: number) {
+export async function phoneChangeRender(ctx: MyContext, userID?: number) {
   try {
-    const menu = menus["adressEmpty"];
+    const menu = menus["phoneChange"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {
-    
+      ctx.session.isWaitingForPhoneChange = true;
       const message =
-        "Введите ваш адрес доставки\n\nАдрес должен содержать:\n📍Город\n📍Улицу\n📍Номер дома (номер офиса / квартиры / помещения)\n\nНапример: г.Калининград, ул.Брамса д.45, оф.1";
+        "Введите ваш новый номер телефона\nНомер телефона можно вводить в любом формате, миним 6 цифр, например\n\n89123123123 или +79123123123";
       ctx.session.menuHistory.push("adressEmpty");
       await ctx.editMessageText(message, {
         reply_markup: keyboard,

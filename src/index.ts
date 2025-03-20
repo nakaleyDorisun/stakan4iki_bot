@@ -93,10 +93,12 @@ bot.callbackQuery("account", handlerCallBackQuery.buttonAccountCQ);
 // Слушатель инлайн кнопки АДРЕСС
 bot.callbackQuery("adress", handlerCallBackQuery.buttonAdressCQ);
 bot.callbackQuery("adressEmpty", handlerCallBackQuery.buttonAdressEmptyCQ);
+bot.callbackQuery("adressChange", handlerCallBackQuery.buttonAdressChangeCQ);
 
 // Слушатель инлайн кнопки ТЕЛЕФОН
 bot.callbackQuery("phone", handlerCallBackQuery.buttonPhoneCQ);
 bot.callbackQuery("phoneEmpty", handlerCallBackQuery.buttonPhoneEmptyCQ);
+bot.callbackQuery("phoneChange", handlerCallBackQuery.buttonPhoneChangeCQ);
 
 // Слушатель инлайн кнопки ПАНЕЛЬ АДМИНИСТРАТОРА
 bot.callbackQuery("admin", handlerCallBackQuery.buttonAdminPanelCQ);
