@@ -16,10 +16,13 @@ export async function deliveryRender(ctx: MyContext, useId?: number) {
           reply_markup: keyboard,
         });
       } else {
-        ctx.editMessageText("У вас нет заказов", {
-          reply_markup: keyboard,
-          parse_mode: "MarkdownV2",
-        });
+        ctx.editMessageText(
+          "У вас нет заказов🙁, перейдите в каталог чтобы добавить свой первый товар",
+          {
+            reply_markup: keyboard,
+            parse_mode: "MarkdownV2",
+          }
+        );
       }
     } else {
       console.error("Ошибка: Не удалось создать клавиатуру каталога.");

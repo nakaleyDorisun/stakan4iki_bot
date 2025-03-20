@@ -1,6 +1,7 @@
 import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
+import { resetInputFlags } from "./resetInputFlags";
 
 export async function accountRender(ctx: MyContext, userID?: number) {
   try {
@@ -10,6 +11,7 @@ export async function accountRender(ctx: MyContext, userID?: number) {
     const id = ctx.from?.id;
     const isAdress = ctx.session.adress;
     const isPhone = ctx.session.phone;
+    resetInputFlags(ctx);
     if (keyboard) {
       if (isAdress && isPhone) {
         await ctx.editMessageText(
