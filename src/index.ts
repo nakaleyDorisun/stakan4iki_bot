@@ -120,6 +120,7 @@ bot.callbackQuery("caps03", handlerCallBackQuery.buttonCaps03CQ);
 
 bot.callbackQuery("caps04", handlerCallBackQuery.buttonCaps04CQ);
 
+// КРЫШКИ 0.2
 bot.callbackQuery("tops02", handlerCallBackQuery.buttonTops02CQ);
 
 bot.callbackQuery("tops03", handlerCallBackQuery.buttonTops03CQ);

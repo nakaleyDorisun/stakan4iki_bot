@@ -119,7 +119,7 @@ export const menus: IMenus = {
     text: "Изменить адрес доставки",
     callbackQuery: "adressChange",
     buttons: [
-      // { text: "Изменить адрес⚙️", callback_data: "adress" }, //
+      { text: "Вернуться в Личный Кабинет🔐", callback_data: "account" }, //
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
@@ -144,7 +144,7 @@ export const menus: IMenus = {
     text: "Изменить контактный телефон",
     callbackQuery: "phoneChange",
     buttons: [
-      // { text: "Изменить адрес⚙️", callback_data: "adress" }, //
+      { text: "Вернуться в Личный Кабинет🔐", callback_data: "account" }, //
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
