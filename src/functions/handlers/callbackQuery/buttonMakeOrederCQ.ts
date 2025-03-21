@@ -1,34 +1,44 @@
 import { bot } from "../../..";
 import { MyContext } from "../../../types";
 import {
+  createInlineKeyboard,
   createReplyKeyboard,
-  createSimpleReplyKeyboard,
 } from "../../keyboards/createKeyboard";
-import { simpleKeyboards } from "../../keyboards/keyboardsSimple";
 import { createInlineMenu } from "../../createFunctions/createInlineMenu";
 import { handleMenuSection } from "../../createFunctions/handleMenuSection";
+import { accountRender } from "../../menu-renders/accountRender";
+import { menus } from "../../../menus/menus";
 
 export async function isNotRegisted(ctx: MyContext) {
+  // const chatID = ctx.chat?.id;
+  const menu = menus["account"];
+  const keyboard = await createInlineKeyboard(menu.buttons);
   if (!ctx.session.phone || !ctx.session.adress) {
     if (!ctx.session.phone && !ctx.session.adress) {
-      await ctx.reply(
-        "Для оформления заказа необходимо указать телефон и адрес доставки\nВыберите соотвествующее меню и укажите свои данные."
+      const message = await ctx.editMessageText(
+        "Для оформления заказа необходимо указать телефон и адрес доставки\nВыберите соотвествующее меню и укажите свои данные.",
+        { reply_markup: keyboard }
       );
+      // ctx.session.messageId = message.message_id;
     } else if (!ctx.session.phone) {
-      await ctx.reply("Для оформления заказа необходимо указать телефон.");
-    } else if (!ctx.session.adress) {
-      await ctx.reply(
-        "Для оформления заказа необходимо указать адрес доставки."
+      const message = await ctx.editMessageText(
+        "Для оформления заказа необходимо указать телефон.",
+        { reply_markup: keyboard }
       );
+      // ctx.session.messageId = message.message_id;
+    } else if (!ctx.session.adress) {
+      const message = await ctx.editMessageText(
+        "Для оформления заказа необходимо указать адрес доставки.",
+        { reply_markup: keyboard }
+      );
+      // ctx.session.messageId = message.message_id;
     }
     // Перенаправляем пользователя в личный кабинет
-    const keyboard = await createSimpleReplyKeyboard(
-      ctx,
-      simpleKeyboards.KEYBOARD_ACCOUNT
-    );
-    if (keyboard) {
-      await handleMenuSection(ctx, "Личный кабинет🔐", keyboard, "account");
-    }
+    // await accountRender(ctx);
+    // setTimeout(async () => {
+    //   await ctx.api.deleteMessage(chatID as number, ctx.session.messageId);
+    // }, 1000);
+
     return true; // Пользователь не зарегистрирован
   }
   return false; // Пользователь зарегистрирован

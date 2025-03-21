@@ -14,12 +14,12 @@ export async function accountRender(ctx: MyContext, userID?: number) {
     await resetInputFlags(ctx);
     if (keyboard) {
       if (isAdress && isPhone) {
-        await ctx.editMessageText(
+        const message = await ctx.editMessageText(
           `${firstName}\n\nВаш ID: ${id}\n\n☎️Ваш номер телефона: ${ctx.session.phone}\n\n🏠Ваш адресс доставки: ${ctx.session.adress}\n\nВы всегда можете изменить свои данные перейдя в соответвующие пункты меню:`,
           { reply_markup: keyboard, parse_mode: "HTML" }
         );
       } else {
-        await ctx.editMessageText(
+        const message = await ctx.editMessageText(
           `${firstName}\n\nпожалуйста, заполните адрес доставки и контактный номер телефона перейдя в соответвующие пункты меню:`,
           { reply_markup: keyboard, parse_mode: "HTML" }
         );
