@@ -14,4 +14,5 @@ export async function startCommand(ctx: MyContext) {
   });
   const messageId = startMessage.message_id;
   ctx.session.messageId = messageId;
+  console.log(ctx.session.messageId, "from /start");
 }

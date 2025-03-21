@@ -98,6 +98,15 @@ export const menus: IMenus = {
       { text: "Главное Меню📒", callback_data: "menu" },
     ],
   },
+  notRegistered: {
+    text: "Личный кабинет незарегистрированного пользователья",
+    callbackQuery: "notRegistered",
+    buttons: [
+      // { text: "Адрес🏠", callback_data: "adress" },
+      // { text: "Телефон☎️", callback_data: "phone" },
+      { text: "Главное Меню📒", callback_data: "menu" },
+    ],
+  },
   adress: {
     text: "Адрес доставки",
     callbackQuery: "adress",
