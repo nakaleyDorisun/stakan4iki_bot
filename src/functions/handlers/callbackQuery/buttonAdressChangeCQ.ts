@@ -3,8 +3,7 @@ import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonAdressChangeCQ(ctx: MyContext) {
   if (ctx.callbackQuery) {
-    const userId = ctx.callbackQuery.from.id;
-    await menuRenderExport.adressChangeRender(ctx, userId);
+    await menuRenderExport.adressChangeRender(ctx);
   } else {
     console.log("Ошибка buttonAdressChangeCQ, не удалось загрузить меню");
     await ctx.reply(

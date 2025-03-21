@@ -3,8 +3,7 @@ import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonAllCapsCQ(ctx: MyContext) {
   if (ctx.callbackQuery) {
-    const userId = ctx.callbackQuery.from.id;
-    await menuRenderExport.allCapsRender(ctx, userId);
+    await menuRenderExport.allCapsRender(ctx);
   } else {
     console.log("Ошибка buttonAllCapsCQ, не удалось загрузить меню");
     await ctx.reply(

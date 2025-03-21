@@ -3,13 +3,11 @@ import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonConfirmDeleteCQ(ctx: MyContext) {
   if (ctx.callbackQuery) {
-    const userId = ctx.callbackQuery.from.id;
-    await menuRenderExport.confirmDeleteRender(ctx, userId);
+    await menuRenderExport.confirmDeleteRender(ctx);
   } else {
     console.log("Ошибка buttonConfirmDeleteCQ, не удалось загрузить меню");
     await ctx.reply(
       "Ошибка загрузки подтверждения очистки корзины, попрубуйте позднее"
     );
-    // await ctx.api.deleteMessages()
   }
 }
