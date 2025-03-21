@@ -3,8 +3,7 @@ import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 
 export async function buttonAccountCQ(ctx: MyContext) {
   if (ctx.callbackQuery) {
-    const userId = ctx.callbackQuery.from.id;
-    await menuRenderExport.accountRender(ctx, userId);
+    await menuRenderExport.accountRender(ctx);
   } else {
     console.log("Ошибка buttonAccountCQ, не удалось загрузить меню");
     await ctx.reply(

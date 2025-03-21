@@ -2,7 +2,7 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 
-export async function allCapsRender(ctx: MyContext, userID?: number) {
+export async function allCapsRender(ctx: MyContext) {
   try {
     const menu = menus["allCaps"];
     const keyboard = await createInlineKeyboard(menu.buttons);

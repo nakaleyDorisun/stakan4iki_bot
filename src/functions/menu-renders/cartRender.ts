@@ -2,7 +2,7 @@ import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 import { MyContext } from "../../types";
 
-export async function cartRender(ctx: MyContext, userId?: number) {
+export async function cartRender(ctx: MyContext) {
   try {
     ctx.session.menuHistory.push("cart");
     const menu = menus["cart"];

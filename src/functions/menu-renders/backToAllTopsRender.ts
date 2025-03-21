@@ -2,7 +2,7 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 
-export async function backToAllTopsRender(ctx: MyContext, userID?: number) {
+export async function backToAllTopsRender(ctx: MyContext) {
   try {
     if (ctx.chat?.id && ctx.callbackQuery?.message?.message_id) {
       const menu = menus["allTops"];

@@ -1,7 +1,7 @@
 import { MyContext } from "../../types";
 import { cartRender } from "./cartRender";
 
-export async function confirmDeleteRender(ctx: MyContext, userID?: number) {
+export async function confirmDeleteRender(ctx: MyContext) {
   try {
     const cart = ctx.session.cart;
     if (cart) {

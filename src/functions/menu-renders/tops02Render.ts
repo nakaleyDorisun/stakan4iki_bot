@@ -2,7 +2,7 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 
-export async function tops02Render(ctx: MyContext, userID?: number) {
+export async function tops02Render(ctx: MyContext) {
   try {
     const menu = menus["tops02"];
     const imgURL =

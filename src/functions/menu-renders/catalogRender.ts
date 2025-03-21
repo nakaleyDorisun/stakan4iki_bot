@@ -2,7 +2,7 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 
-export async function catalogRender(ctx: MyContext, userID?: number) {
+export async function catalogRender(ctx: MyContext) {
   try {
     console.log("kycb");
     const menu = menus["catalog"];

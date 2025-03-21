@@ -3,7 +3,7 @@ import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 import { resetInputFlags } from "./resetInputFlags";
 
-export async function accountRender(ctx: MyContext, userID?: number) {
+export async function accountRender(ctx: MyContext) {
   try {
     const menu = menus["account"];
     const keyboard = await createInlineKeyboard(menu.buttons);

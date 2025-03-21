@@ -2,7 +2,7 @@ import { MyContext } from "../../types";
 import { createInlineKeyboard } from "../keyboards/createKeyboard";
 import { menus } from "../../menus/menus";
 
-export async function phoneChangeRender(ctx: MyContext, userID?: number) {
+export async function phoneChangeRender(ctx: MyContext) {
   try {
     const menu = menus["phoneChange"];
     const keyboard = await createInlineKeyboard(menu.buttons);
