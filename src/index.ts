@@ -40,6 +40,7 @@ bot.use(
       isAdmin: false,
       messageId: 0,
       messagesAddToCart: [],
+      messagesFromUserInput: [],
     }),
     storage: new MemorySessionStorage(),
   })

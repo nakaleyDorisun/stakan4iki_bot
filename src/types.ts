@@ -18,6 +18,7 @@ export interface SessionData {
   keyboardHistory: Keyboard[]; // Массив для хранения истории клавиатур, небходим для reply кнопки обратно
   messageId: number; // переменная для хранения ID сообщения для удаления в handlerPersonalDataRegister
   messagesAddToCart: number[]; // массив для хранения ID сообщений от addToCart необходимый для последующей очистки чата
+  messagesFromUserInput: number[]; // массив для хранения ID сообщений от personalDataRegister необходимый для последующей очистки чата
   cart: Cart[]; // Массив товар в корзине
   orders: Orders[]; // массив заказов для вкладки доставка
   phone: string | null | undefined; // номер телефона из личного кабинета

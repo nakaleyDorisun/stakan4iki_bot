@@ -13,6 +13,9 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
   const menuPhoneEmpty = menus["phoneEmpty"];
   const menuPhoneChange = menus["phoneChange"];
   const messageInput = ctx.message?.text ? ctx.message.text : "";
+  const messageInputId = ctx.message?.message_id;
+  console.log(messageInput, "messageInput");
+  console.log(messageInputId, "messageInputId");
   const isWaitingForPhone = ctx.session.isWaitingForPhone;
   const isWaitingForAdress = ctx.session.isWaitingForAdress;
   const isWaitingForPhoneChange = ctx.session.isWaitingForPhoneChange;
@@ -34,7 +37,7 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
 
   if (isWaitingForPhone || isWaitingForAdress) {
     if (isWaitingForPhone && !isWaitingForAdress) {
-      if (isPhoneCorrect.test(messageInput) && messageInput) {
+      if (isPhoneCorrect.test(messageInput) && messageInput && messageInputId) {
         ctx.session.phone = messageInput;
         ctx.session.isWaitingForPhone = false;
         const message = await ctx.reply(
@@ -43,6 +46,14 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
             reply_markup: keyboardPhone,
           }
         );
+        ctx.session.messagesFromUserInput.push(messageInputId); /////
+        console.log(
+          ctx.session.messagesFromUserInput,
+          "ctx.session.messagesFromUserInput"
+        );
+        if (ctx.session.messagesFromUserInput) {
+          await ctx.deleteMessages(ctx.session.messagesFromUserInput);
+        }
         if (ctx.session.messageId) {
           await ctx.api.deleteMessage(chatID as number, ctx.session.messageId);
         } else {
@@ -50,10 +61,15 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
         }
         ctx.session.messageId = message.message_id;
         console.log(ctx.session.messageId, "Вы установили телефон:");
-      } else {
+      } else if (messageInputId) {
         const message = await ctx.reply(
           `❗️Ошибка ввода номера телефона\n\nВведите корректный номер телефона\n\nНомер  можно вводить в любом формате, миним 6 цифр, например\n\n89123123123 | +79123123123 | +7-912-312-31-13`,
           { reply_markup: keyboardPhoneEmpty }
+        );
+        ctx.session.messagesFromUserInput.push(messageInputId); /////
+        console.log(
+          ctx.session.messagesFromUserInput,
+          "ctx.session.messagesFromUserInput"
         );
         console.log(ctx.session.messageId, "Ошибка номера телефона");
         if (ctx.session.messageId) {
@@ -64,7 +80,7 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
         ctx.session.messageId = message.message_id;
       }
     } else {
-      if (isAdressCorrect && messageInput) {
+      if (isAdressCorrect && messageInput && messageInputId) {
         ctx.session.adress = ctx.message?.text;
         ctx.session.isWaitingForAdress = false;
         const message = await ctx.reply(
@@ -73,6 +89,14 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
             reply_markup: keyboardAdress,
           }
         );
+        ctx.session.messagesFromUserInput.push(messageInputId); /////
+        console.log(
+          ctx.session.messagesFromUserInput,
+          "ctx.session.messagesFromUserInput"
+        );
+        if (ctx.session.messagesFromUserInput) {
+          await ctx.deleteMessages(ctx.session.messagesFromUserInput);
+        }
         if (ctx.session.messageId) {
           await ctx.api.deleteMessage(chatID as number, ctx.session.messageId);
         } else {
@@ -80,7 +104,12 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
         }
         ctx.session.messageId = message.message_id;
         console.log(ctx.session.messageId, "Вы установили адрес:");
-      } else {
+      } else if (messageInputId) {
+        ctx.session.messagesFromUserInput.push(messageInputId); /////
+        console.log(
+          ctx.session.messagesFromUserInput,
+          "ctx.session.messagesFromUserInput"
+        );
         const message = await ctx.reply(
           `❗️Ошибка ввода адреса доставки\n\nВведите корректный адрес доставки\n\nАдрес должен содержать:\n📍Город\n📍 Улицу\n📍Номер дома (номер офиса / квартиры / помещения)\n\nНапример: г.Калининград, ул.Брамса д.45, оф.1`,
           { reply_markup: keyboardAdressEmpty }
@@ -97,7 +126,11 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
   } else {
     if (isWaitingForPhoneChange || isWaitingForAdressChange) {
       if (isWaitingForPhoneChange && !isWaitingForAdressChange) {
-        if (isPhoneCorrect.test(messageInput) && messageInput) {
+        if (
+          isPhoneCorrect.test(messageInput) &&
+          messageInput &&
+          messageInputId
+        ) {
           ctx.session.phone = ctx.message?.text;
           ctx.session.isWaitingForPhoneChange = false;
           const message = await ctx.reply(
@@ -106,6 +139,14 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
               reply_markup: keyboardPhoneChange,
             }
           );
+          ctx.session.messagesFromUserInput.push(messageInputId); /////
+          console.log(
+            ctx.session.messagesFromUserInput,
+            "ctx.session.messagesFromUserInput"
+          );
+          if (ctx.session.messagesFromUserInput) {
+            await ctx.deleteMessages(ctx.session.messagesFromUserInput);
+          }
           if (ctx.session.messageId) {
             await ctx.api.deleteMessage(
               chatID as number,
@@ -115,7 +156,12 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
             console.log("Ошибка удаления, ctx.session.messageId отсутствует");
           }
           ctx.session.messageId = message.message_id;
-        } else {
+        } else if (messageInputId) {
+          ctx.session.messagesFromUserInput.push(messageInputId); /////
+          console.log(
+            ctx.session.messagesFromUserInput,
+            "ctx.session.messagesFromUserInput"
+          );
           const message = await ctx.reply(`Введите корректный номер телефона`, {
             reply_markup: keyboardPhoneChange,
           });
@@ -130,7 +176,7 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
           ctx.session.messageId = message.message_id;
         }
       } else {
-        if (isAdressCorrect && messageInput) {
+        if (isAdressCorrect && messageInput && messageInputId) {
           ctx.session.adress = ctx.message?.text;
           ctx.session.isWaitingForAdressChange = false;
           const message = await ctx.reply(
@@ -139,6 +185,14 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
               reply_markup: keyboardAdressChange,
             }
           );
+          ctx.session.messagesFromUserInput.push(messageInputId); /////
+          console.log(
+            ctx.session.messagesFromUserInput,
+            "ctx.session.messagesFromUserInput"
+          );
+          if (ctx.session.messagesFromUserInput) {
+            await ctx.deleteMessages(ctx.session.messagesFromUserInput);
+          }
           if (ctx.session.messageId) {
             await ctx.api.deleteMessage(
               chatID as number,
@@ -148,10 +202,15 @@ export async function handlerPersonalDataRegister(ctx: MyContext) {
             console.log("Ошибка удаления, ctx.session.messageId отсутствует");
           }
           ctx.session.messageId = message.message_id;
-        } else {
+        } else if (messageInputId) {
           const message = await ctx.reply(
             `❗️Ошибка ввода адреса доставки\n\nВведите корректный адрес доставки\n\nАдрес должен содержать:\n📍Город\n📍 Улицу\n📍Номер дома (номер офиса / квартиры / помещения)\n\nНапример: г.Калининград, ул.Брамса д.45, оф.1`,
             { reply_markup: keyboardAdressChange }
+          );
+          ctx.session.messagesFromUserInput.push(messageInputId); /////
+          console.log(
+            ctx.session.messagesFromUserInput,
+            "ctx.session.messagesFromUserInput"
           );
           if (ctx.session.messageId) {
             await ctx.api.deleteMessage(
