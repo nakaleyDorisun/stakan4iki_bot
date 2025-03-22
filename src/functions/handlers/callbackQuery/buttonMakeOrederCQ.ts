@@ -7,6 +7,7 @@ import {
 import { createInlineMenu } from "../../createFunctions/createInlineMenu";
 import { handleMenuSection } from "../../createFunctions/handleMenuSection";
 import { menus } from "../../../menus/menus";
+import { cartRender } from "../../menu-renders/cartRender";
 
 export async function isNotRegisted(ctx: MyContext) {
   const menu = menus["notRegistered"];
@@ -39,8 +40,10 @@ export async function buttonMakeOrederCQ(ctx: MyContext) {
     return;
   }
   if (ctx.session.cart.length < 1) {
-    await ctx.reply(`Чтобы оформить заказа добавьте хотя бы 1 товар: `);
-    await createInlineMenu(ctx, "catalog");
+    await ctx.editMessageText(
+      `Чтобы оформить заказа добавьте хотя бы 1 товар: `
+    );
+    await cartRender(ctx);
     return;
   }
   if (ctx.callbackQuery) {
@@ -103,15 +106,8 @@ ${ctx.session.cart
 
   ctx.session.cart = []; // очищаем корзину
   ctx.session.totalRub = 0; // очищаем тотал прайс
-  const keyboardCatalog = await createReplyKeyboard(ctx, "keyboardCatalog");
-  if (keyboardCatalog) {
-    await handleMenuSection(ctx, "Каталог📕", keyboardCatalog, "catalog");
-  } else {
-    // Обработка случая, когда клавиатура не была создана
-    console.error("Ошибка: Не удалось создать клавиатуру каталога.");
-    await ctx.reply(
-      "Произошла ошибка при загрузке каталога. Попробуйте позже."
-    );
+  if (ctx.chat?.id && ctx.session.messagesAddToCart) {
+    await ctx.api.deleteMessages(ctx.chat.id, ctx.session.messagesAddToCart);
   }
-  await createInlineMenu(ctx, "makeOrder");
+  await cartRender(ctx);
 }
