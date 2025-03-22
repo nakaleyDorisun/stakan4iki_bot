@@ -4,6 +4,10 @@ import { menus } from "../../menus/menus";
 
 export async function caps04Render(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from caps04Render");
+    } /////////////////////////////////////////////////
     const menu = menus["caps04"];
     const imgURL =
       "https://barista-spb.ru/components/com_jshopping/files/img_products/913_bumazhniy-stakan-200ml-white.jpg";

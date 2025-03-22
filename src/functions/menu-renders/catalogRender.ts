@@ -4,7 +4,19 @@ import { menus } from "../../menus/menus";
 
 export async function catalogRender(ctx: MyContext) {
   try {
-    console.log("kycb");
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "ctx.callbackQuery.message.message_id from catalogRender"
+      );
+
+      ctx.session.messageId = ctx.callbackQuery.message.message_id;
+      console.log(
+        ctx.session.messageId,
+        "ctx.session.messageId from catalogRender"
+      );
+    } /////////////////////////////////////////////////
     const menu = menus["catalog"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {
@@ -14,7 +26,7 @@ export async function catalogRender(ctx: MyContext) {
         parse_mode: "MarkdownV2",
       });
     } else {
-      await ctx.reply("Произошла ошибка создания клавиатуры");
+      await ctx.editMessageText("Произошла ошибка создания клавиатуры");
     }
   } catch (error) {
     console.error(error);

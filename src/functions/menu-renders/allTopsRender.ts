@@ -4,6 +4,10 @@ import { menus } from "../../menus/menus";
 
 export async function allTopsRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from allTopsRender");
+    } /////////////////////////////////////////////////
     const menu = menus["allTops"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {
@@ -13,7 +17,7 @@ export async function allTopsRender(ctx: MyContext) {
         parse_mode: "MarkdownV2",
       });
     } else {
-      await ctx.reply("Произошла ошибка создания клавиатуры");
+      await ctx.editMessageText("Произошла ошибка создания клавиатуры");
     }
   } catch (error) {
     console.error(error);

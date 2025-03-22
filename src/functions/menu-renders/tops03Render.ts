@@ -4,6 +4,10 @@ import { menus } from "../../menus/menus";
 
 export async function tops03Render(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from tops03Render");
+    } /////////////////////////////////////////////////
     const menu = menus["tops03"];
     const imgURL =
       "https://barista-spb.ru/components/com_jshopping/files/img_products/924_kryshka-plastikovaya-chernaya-klapan-80mm.jpg";

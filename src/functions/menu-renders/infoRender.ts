@@ -4,6 +4,10 @@ import { menus } from "../../menus/menus";
 
 export async function infoRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from infoRender");
+    } /////////////////////////////////////////////////
     const menu = menus["info"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {

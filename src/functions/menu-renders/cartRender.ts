@@ -4,6 +4,10 @@ import { MyContext } from "../../types";
 
 export async function cartRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from cartRender");
+    } /////////////////////////////////////////////////
     ctx.session.menuHistory.push("cart");
     const menu = menus["cart"];
     const menuCartEmpty = menus["cartEmpty"];

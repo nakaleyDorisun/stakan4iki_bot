@@ -4,6 +4,13 @@ import { menus } from "../../menus/menus";
 
 export async function deleteItemsRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from deleteItemsRender"
+      );
+    } /////////////////////////////////////////////////
     const menu = menus["deleteItems"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {

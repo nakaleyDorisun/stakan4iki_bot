@@ -6,6 +6,13 @@ export async function adressChangeRender(ctx: MyContext) {
   try {
     const menu = menus["adressChange"];
     const keyboard = await createInlineKeyboard(menu.buttons);
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from adressChangeRender"
+      );
+    } /////////////////////////////////////////////////
     if (keyboard) {
       ctx.session.isWaitingForAdressChange = true;
       const message =

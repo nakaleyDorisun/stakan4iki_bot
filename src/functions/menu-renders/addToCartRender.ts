@@ -6,6 +6,10 @@ export async function addToCartRender(ctx: MyContext) {
   const itemMenuKey = ctx.session.menuHistory.slice(-1)[0];
   const menu = menus[itemMenuKey];
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from addToCartRender");
+    } /////////////////////////////////////////////////
     if (menu.price) {
       ctx.session.cart.push({
         id: Date.now().toLocaleString(),

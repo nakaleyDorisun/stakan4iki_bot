@@ -8,6 +8,13 @@ export async function adminPanelRender(ctx: MyContext, userID?: number) {
     if (userID) {
       await isAdmin(ctx, userID);
     }
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from adminPanelRender"
+      );
+    } /////////////////////////////////////////////////
     const menu = menus["admin"];
     const menuNotAdmin = menus["noTAdmin"];
     const keyboard = await createInlineKeyboard(menu.buttons);

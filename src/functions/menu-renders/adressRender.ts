@@ -5,6 +5,10 @@ import { adressEmptyRender } from "./adressEmptyRender";
 
 export async function adressRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from adressRender");
+    } /////////////////////////////////////////////////
     const menu = menus["adress"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     const adress = ctx.session.adress;

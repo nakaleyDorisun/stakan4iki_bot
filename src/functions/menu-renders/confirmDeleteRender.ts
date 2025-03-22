@@ -4,6 +4,13 @@ import { cartRender } from "./cartRender";
 export async function confirmDeleteRender(ctx: MyContext) {
   try {
     const cart = ctx.session.cart;
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from confirmDeleteRender"
+      );
+    } /////////////////////////////////////////////////
     if (cart) {
       ctx.session.cart = [];
       ctx.session.totalRub = 0;

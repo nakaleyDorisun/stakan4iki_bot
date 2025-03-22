@@ -4,6 +4,13 @@ import { menus } from "../../menus/menus";
 
 export async function phoneChangeRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from phoneChangeRender"
+      );
+    } /////////////////////////////////////////////////
     const menu = menus["phoneChange"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {

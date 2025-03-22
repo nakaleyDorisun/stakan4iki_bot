@@ -4,6 +4,13 @@ import { menus } from "../../menus/menus";
 
 export async function backToAllTopsRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from backToAllTopsRender"
+      );
+    } /////////////////////////////////////////////////
     if (ctx.chat?.id && ctx.callbackQuery?.message?.message_id) {
       const menu = menus["allTops"];
       const keyboard = await createInlineKeyboard(menu.buttons);

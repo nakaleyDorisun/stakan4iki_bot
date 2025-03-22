@@ -5,6 +5,10 @@ import { resetInputFlags } from "./resetInputFlags";
 
 export async function accountRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from accountRender");
+    } /////////////////////////////////////////////////
     const menu = menus["account"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     const firstName = ctx.from?.first_name;

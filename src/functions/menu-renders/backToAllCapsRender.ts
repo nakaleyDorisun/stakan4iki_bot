@@ -4,6 +4,13 @@ import { menus } from "../../menus/menus";
 
 export async function backToAllCapsRender(ctx: MyContext) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(
+        ctx.callbackQuery.message.message_id,
+        "from backToAllCapsRender"
+      );
+    } /////////////////////////////////////////////////
     const menu = menus["allCaps"];
     const keyboard = await createInlineKeyboard(menu.buttons);
     if (keyboard) {

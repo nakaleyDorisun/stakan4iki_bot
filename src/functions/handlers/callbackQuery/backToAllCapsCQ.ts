@@ -1,4 +1,4 @@
-import { menuRenderExport } from "./../../menu-renders/_menuRenderExport";
+import { menuRenderExport } from "../../menu-renders/_menuRenderExport";
 import { MyContext } from "../../../types";
 
 export async function backToAllCapsCQ(ctx: MyContext) {

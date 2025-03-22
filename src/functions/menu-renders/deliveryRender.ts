@@ -4,6 +4,10 @@ import { createInlineKeyboard } from "../keyboards/createKeyboard";
 
 export async function deliveryRender(ctx: MyContext, useId?: number) {
   try {
+    //////////////////////////////////////////////////
+    if (ctx.callbackQuery?.message) {
+      console.log(ctx.callbackQuery.message.message_id, "from deliveryRender");
+    } /////////////////////////////////////////////////
     ctx.session.menuHistory.push("delivery");
     const menu = menus["delivery"];
     const keyboard = await createInlineKeyboard(menu.buttons);
